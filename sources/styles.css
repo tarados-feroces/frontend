@@ -1,0 +1,42 @@
+.loginBlock{
+    background-color: beige;
+    width: 400px;
+    height: 240px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -100px 0 0 -150px;
+}
+
+.loginBlock form{
+    width: 96%;
+    height: 90%;
+}
+
+.loginBlock input{
+    width: 100%;
+    height: 40px;
+    margin: 2%;
+}
+
+
+.registratonBlock{
+    background-color: beige;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -200px 0 0 -200px;
+}
+
+.registratonBlock form{
+    width: 96%;
+    height: 90%;
+}
+
+.registratonBlock input{
+    width: 100%;
+    height: 40px;
+    margin: 2%;
+}
