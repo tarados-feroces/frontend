@@ -19,6 +19,20 @@
     margin: 2%;
 }
 
+.loginButton{
+    cursor: pointer;
+    text-align: center;
+    margin: 10px;
+    margin-left: 150px;
+    width: 100px;
+    height: 50px;
+    border: thin black solid;
+}
+
+.loginButton p {
+    margin-top: 15px;
+}
+
 
 .registratonBlock{
     background-color: beige;
@@ -40,3 +54,4 @@
     height: 40px;
     margin: 2%;
 }
+
