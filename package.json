@@ -4,7 +4,7 @@
   "description": "Frontend (technopark)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo 'hello'"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tarados-feroces/frontend/issues"
   },
-  "homepage": "https://github.com/tarados-feroces/frontend#readme"
+  "homepage": "https://github.com/tarados-feroces/frontend#readme",
+  "devDependencies": {
+    "express": "^4.16.2"
+  }
 }
