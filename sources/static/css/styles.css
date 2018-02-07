@@ -29,7 +29,7 @@
     margin-left: 150px;
     width: 100px;
     height: 50px;
-    /*border: thin solid;*/
+    border: thin solid;
     border-radius: 30px;
     background-color: darkgray;
 }
