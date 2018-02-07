@@ -5,16 +5,16 @@ node_js:
 
 branches:
   only:
-  - fish
+  - master
 
 deploy:
   provider: heroku
   api_key:
     secure: $HEROCU_KEY
-  app: test-dev-server
+  app: tf-master-server
   on:
     repo: tarados-feroces/frontend
-    branch: fish
+    branch: master
   skip_cleanup: true
 
 before_script:
