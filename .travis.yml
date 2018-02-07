@@ -10,7 +10,7 @@ branches:
 deploy:
   provider: heroku
   api_key:
-    secure: c7195355-2516-48de-993a-82e61097c074
+    secure: $HEROCU_KEY
   app: test-dev-server
   on:
     repo: tarados-feroces/frontend
