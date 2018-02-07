@@ -1,7 +1,7 @@
 'use strict';
 
 
-let regToValidateLogin = /^([a-z0-9_])+$/i;
+const regToValidateLogin = /^([a-z0-9_])+$/i;
 
 document.getElementsByClassName("loginButton")[0].addEventListener("click", () => {
     let inputs = [document.getElementsByClassName("loginLoginInput")[0], document.getElementsByClassName("passwordLoginInput")[0]];
@@ -12,6 +12,6 @@ document.getElementsByClassName("loginButton")[0].addEventListener("click", () =
     inputs[1].value.search(regToValidateLogin) === -1 ? errors[1].style.display = "block" : errors[1].style.display = "none";
 
     if (inputs[0].value.search(regToValidateLogin) !== -1 && inputs[1].value.search(regToValidateLogin) !== -1) {
-        document.location.href = 'authorized.html';
+        document.location.href = "authorized.html";
     }
 });
