@@ -10,7 +10,7 @@ branches:
 deploy:
   provider: heroku
   api_key:
-    secure: $HEROCU_KEY
+    secure: $MASTER_KEY
   app: tf-master-server
   on:
     repo: tarados-feroces/frontend
