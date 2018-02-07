@@ -7,6 +7,6 @@ let path = require('path');
 
 app.use('', express.static(path.join('sources')));
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
     console.log('Example app listening on port 3000!');
 });
