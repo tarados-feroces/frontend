@@ -1,0 +1,21 @@
+language: node_js
+sudo: false
+node_js:
+- '9'
+
+branches:
+  only:
+  - fish
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: $SSH_KEY
+  app: test-dev-server
+  on:
+    repo: tarados-feroces/frontend
+    branch: fish
+  skip_cleanup: true
+
+before_script:
+  - npm install
