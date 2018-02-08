@@ -12,25 +12,14 @@ document.getElementsByClassName("loginButton")[0].addEventListener("click", () =
     }
 });
 
-inputs[0].onfocus = () => {
-    if (errors[0].style.display === "block") {
-        errors[0].style.display = "none";
-    }
-};
+inputs.forEach((item, i) => {
+    item.onblur = () => {
+        item.value.search(regToValidateLogin) === -1 ? errors[i].style.display = "block" : errors[i].style.display = "";
+    };
 
-inputs[0].onblur = () => {
-    inputs[0].value.search(regToValidateLogin) === -1 ? errors[0].style.display = "block" : errors[0].style.display = "none";
-};
-
-inputs[1].onfocus = () => {
-    if (errors[1].style.display === "block") {
-        errors[1].style.display = "none";
-    }
-};
-
-inputs[1].onblur = () => {
-    inputs[1].value.search(regToValidateLogin) === -1 ? errors[1].style.display = "block" : errors[1].style.display = "none";
-};
-
-
-
+    item.onfocus = () => {
+        if (errors[i].style.display === "block") {
+            errors[i].style.display = "";
+        }
+    };
+});
