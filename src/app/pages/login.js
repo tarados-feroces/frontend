@@ -1,6 +1,5 @@
 'use strict';
 
-
 const regToValidateLogin = /^([a-z0-9_])+$/i;
 
 const inputs_blocks = [...document.getElementsByClassName('login-block__input-block')];
