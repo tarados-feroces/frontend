@@ -3,7 +3,8 @@
 
 const regToValidateLogin = /^([a-z0-9_])+$/i;
 
-const inputs = [document.getElementsByClassName("loginLoginInput")[0], document.getElementsByClassName("passwordLoginInput")[0]];
+const inputs = [...document.getElementsByClassName('login__input')];
+const inputs_blocks = [...document.getElementsByClassName('login-block__input-block')];
 const errors = document.getElementsByClassName("error");
 
 document.getElementsByClassName("loginButton")[0].addEventListener("click", () => {
@@ -12,14 +13,22 @@ document.getElementsByClassName("loginButton")[0].addEventListener("click", () =
     }
 });
 
-inputs.forEach((item, i) => {
-    item.onblur = () => {
-        item.value.search(regToValidateLogin) === -1 ? errors[i].style.display = "block" : errors[i].style.display = "";
-    };
+const validation = inputBlock => {
 
-    item.onfocus = () => {
-        if (errors[i].style.display === "block") {
-            errors[i].style.display = "";
+    let input = inputBlock.getElementsByTagName("input")[0];
+    let error = inputBlock.getElementsByClassName("error")[0];
+
+    input.addEventListener('blur', () => {
+        input.value.search(regToValidateLogin) === -1 ? error.style.display = "block" : error.style.display = "";
+    });
+
+    input.addEventListener('focus', () => {
+        if (error.style.display === "block") {
+            error.style.display = "";
         }
-    };
+    });
+};
+
+inputs_blocks.forEach((item) => {
+    validation(item);
 });
