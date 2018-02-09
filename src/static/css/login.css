@@ -20,7 +20,7 @@
     margin: 2%;
 }
 
-.loginButton{
+.login-block__login-button{
 
     cursor: pointer;
     text-align: center;
@@ -34,7 +34,7 @@
     background-color: darkgray;
 }
 
-.loginButton p {
+.login-block__login-button p {
     margin-top: 15px;
 }
 
