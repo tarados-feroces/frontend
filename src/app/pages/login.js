@@ -27,3 +27,4 @@ const validation = inputBlock => {
 };
 
 inputsBlocks.forEach(item => validation(item));
+
