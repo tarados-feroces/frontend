@@ -13,17 +13,20 @@ document.getElementsByClassName("loginButton")[0].addEventListener("click", () =
     }
 });
 
-const validation = (input) => {
-    console.log(input.getElementsByTagName("input")[0]);
-    input.getElementsByTagName("input")[0].addEventListener('blur', () => {
-        input.getElementsByTagName("input")[0].value.search(regToValidateLogin) === -1 ? input.getElementsByTagName("error")[0].style.display = "block" : input.getElementsByTagName("error")[0].style.display = "";
+const validation = inputBlock => {
+
+    let input = inputBlock.getElementsByTagName("input")[0];
+    let error = inputBlock.getElementsByClassName("error")[0];
+
+    input.addEventListener('blur', () => {
+        input.value.search(regToValidateLogin) === -1 ? error.style.display = "block" : error.style.display = "";
     });
 
-    input.getElementsByTagName("input")[0].onfocus = () => {
-        if (input.getElementsByTagName("error")[0].style.display === "block") {
-            input.getElementsByTagName("error")[0].style.display = "";
+    input.addEventListener('focus', () => {
+        if (error.style.display === "block") {
+            error.style.display = "";
         }
-    };
+    });
 };
 
 inputs_blocks.forEach((item) => {

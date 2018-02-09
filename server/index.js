@@ -1,9 +1,9 @@
 'use strict';
 
-let express = require('express');
-let app = express();
+const express = require('express');
+const app = express();
 
-let path = require('path');
+const path = require('path');
 
 app.use('', express.static(path.join('src')));
 
