@@ -27,6 +27,4 @@ const validation = inputBlock => {
     });
 };
 
-inputs_blocks.forEach((item) => {
-    validation(item);
-});
+inputs_blocks.forEach(item => validation(item));
