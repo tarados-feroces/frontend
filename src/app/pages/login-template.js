@@ -1,15 +1,5 @@
 'use strict';
 
-const source = document.getElementById("login-template").innerHTML;
-const template = Handlebars.compile(source);
+const manager = new TemplateManager("login-template");
 
-// const context = {title : "Hello world!"};
-const html = template({});
-
-let div = document.createElement("div");
-
-div.classList.add("login-block");
-
-div.innerHTML = html;
-
-document.body.appendChild(div);
+document.body.appendChild(manager.getElement({}, "login-block"));
