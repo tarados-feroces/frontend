@@ -77,6 +77,9 @@
 }
 
 .error {
-    display: none;
     color: red;
+}
+
+.error-disable{
+    display: none;
 }
