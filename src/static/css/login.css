@@ -38,7 +38,8 @@
     margin-top: 15px;
 }
 
-.registratonBlock {
+
+.registration-block {
     background-color: beige;
     width: 400px;
     height: 550px;
@@ -48,18 +49,15 @@
     margin: -200px 0 0 -200px;
 }
 
-.registratonBlock form {
+.registration-block form {
     width: 96%;
     height: 90%;
 }
 
-.registratonBlock input {
+.registration-block input {
     width: 100%;
     height: 40px;
     margin: 2%;
-}
-
-.registratonBlock input {
     font-size: 28px;
 }
 
