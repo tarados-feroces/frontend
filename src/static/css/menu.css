@@ -19,6 +19,10 @@
     box-shadow: 4px 4px 10px 2px #a9997f;
 }
 
+.points a {
+    text-decoration: none;
+}
+
 .points ul {
     position: relative;
 
