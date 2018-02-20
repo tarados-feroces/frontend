@@ -1,4 +1,4 @@
-.registrationBlock {
+.registration-block {
     display: flex;
     flex-direction: column;
     width: 400px;
@@ -28,11 +28,11 @@ input {
     /*box-shadow: 0 0 0 1px darkgray inner;*/
 }
 
-.registrationBlock > * {
+.registration-block > * {
     margin-bottom: 10px;
 }
 
-.registrationBlock > *:last-child {
+.registration-block > *:last-child {
     margin-bottom: 0px;
 }
 

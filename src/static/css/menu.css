@@ -4,11 +4,12 @@
     flex-direction: column;
     align-items: center;
     color: #81495a;
+    font-size: 30px;
 }
 
 .points {
-    width: 220px;
-    height: 80px;
+    width: 500px;
+    height: 200px;
     position: relative;
     border-radius: 10px;
     text-align: center;
@@ -28,11 +29,11 @@
 }
 
 .points li {
-    background-color: #ffe8d0;
+    background-color: #fff4dc;
 
     position: relative;
-    width: 220px;
-    height: 40px;
+    width: 500px;
+    height: 100px;
 
     user-select: none;
 }
