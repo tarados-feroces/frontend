@@ -6,7 +6,7 @@ body {
   position: fixed;
   left: 0;
   top: 0;
-  background-image: url("../../dragon.jpg");
+  background-image: url("../../background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   filter: blur(12px);

@@ -47,31 +47,72 @@ $blocks-text-color: #e5f4e3;
 
     &-friends {
       flex-basis: 20%;
-      background-color: white;
+      background-color: #6d9dc5;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-
+      justify-content: space-between;
+      &-label {
+        display: flex;
+        height: 100px;
+        border-bottom: black solid thin;
+        justify-content: center;
+        &-value {
+          font-size: 40px;
+          margin: 0;
+          align-self: center;
+          color: $blocks-text-color;
+          font-family: $main-font;
+        }
+      }
       &-item {
         height: 100px;
-        margin: 10px;
-        background-color: #e7bb41;
+        margin: 5px;
+        display: flex;
+        justify-content: space-around;
+        background-color: #e7a516;
+        border-radius: 5px;
+        &-avatar {
+          width: 80px;
+          height: 80px;
+          align-self: center;
+          opacity: 1;
+          border-radius: 15px;
+        }
+        &-login {
+          display: flex;
+          width: 200px;
+          justify-content: center;
+          &-value {
+            margin: 0;
+            font-size: 30px;
+            color: $blocks-text-color;
+            align-self: center;
+            //border-bottom: black thin solid;
+          }
+        }
+        &-image {
+          align-self: center;
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+        }
       }
     }
   }
 
   &__user-info {
     flex-basis: 20%;
-    //background-color: #bcdafb;
+    background-color: #6d9dc5;
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
+    justify-content: space-around;
 
     &-avatar {
       width: 80px;
       height: 80px;
       align-self: center;
       opacity: 1;
+      border-radius: 15px;
     }
 
     &-stat-block {
@@ -83,6 +124,7 @@ $blocks-text-color: #e5f4e3;
         display: flex;
         flex-basis: 100%;
         justify-content: center;
+        border-bottom: black thin solid;
         &-value {
           margin: 0;
           font-size: 30px;
@@ -91,9 +133,25 @@ $blocks-text-color: #e5f4e3;
         }
       }
       &-stats {
-        width: 70px;
-        background-color: green;
+        width: 90px;
         margin-bottom: 5px;
+        display: flex;
+        justify-content: space-around;
+
+        &-image {
+          align-self: center;
+          width: 30px;
+          height: 30px;
+        }
+        &-data {
+          display: flex;
+          &-value {
+            margin: auto;
+            font-size: 20px;
+            color: white;
+
+          }
+        }
       }
     }
     &-settings {
