@@ -6,27 +6,11 @@ $main-font: 'Crimson Text', sans-serif;
 $blocks-background: #143f6b;
 $blocks-text-color: #e5f4e3;
 
-
 .auth-page {
   min-width: 1400px;
   max-width: 1920px;
   &__header {
-    position: fixed;
-    left: 0;
-    top: 0;
-    display: flex;
     justify-content: space-between;
-    width: 100%;
-    height: 100px;
-    background-color: $header-background;
-    color: $header-text-color;
-    opacity: 0.9;
-    box-shadow: 0 0 19px 6px #00071e;
-    &-logo {
-      font-family: $headers-font;
-      width: 400px;
-      cursor: pointer;
-    }
   }
 
   &__content {
@@ -93,71 +77,5 @@ $blocks-text-color: #e5f4e3;
     }
   }
 
-  &__user-info {
-    flex-basis: 20%;
-    background-color: #6d9dc5;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-
-    &-avatar {
-      width: 80px;
-      height: 80px;
-      align-self: center;
-      opacity: 1;
-      border-radius: 15px;
-    }
-
-    &-stat-block {
-      display: flex;
-      flex-flow: row wrap;
-      width: 200px;
-      justify-content: space-around;
-      &-login {
-        display: flex;
-        flex-basis: 100%;
-        justify-content: center;
-        border-bottom: black thin solid;
-        &-value {
-          margin: 0;
-          font-size: 30px;
-          color: $blocks-text-color;
-          align-self: center;
-        }
-      }
-      &-stats {
-        width: 90px;
-        margin-bottom: 5px;
-        display: flex;
-        justify-content: space-around;
-
-        &-image {
-          align-self: center;
-          width: 30px;
-          height: 30px;
-        }
-        &-data {
-          display: flex;
-          &-value {
-            margin: auto;
-            font-size: 20px;
-            color: white;
-
-          }
-        }
-      }
-    }
-    &-settings {
-      display: flex;
-      margin-right: 5px;
-      &-value {
-        cursor: pointer;
-        width: 50px;
-        height: 50px;
-        margin: auto;
-      }
-    }
-
-  }
 }
 

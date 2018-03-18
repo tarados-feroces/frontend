@@ -20,22 +20,7 @@ body {
   max-width: 1920px; }
 
 .main-page__header {
-  position: fixed;
-  left: 0;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100px;
-  background-color: #0f255d;
-  color: #e7bb41;
-  opacity: 0.9;
-  box-shadow: 0 0 19px 6px #00071e; }
-
-.main-page__header-logo {
-  font-family: "Nunito", sans-serif;
-  width: 400px;
-  cursor: pointer; }
+  justify-content: center; }
 
 .main-page__row {
   display: flex;
