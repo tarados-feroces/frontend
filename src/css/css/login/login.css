@@ -1,0 +1,27 @@
+.main-page__form-block-content {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #143f6b;
+  opacity: 0.95;
+  padding: 30px;
+  border-radius: 15px; }
+
+.main-page__form-block-content:hover {
+  animation: shining 3s ease infinite; }
+
+.main-page__form-block {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 200px; }
+
+@keyframes shining {
+  0% {
+    box-shadow: 0px 0px 10px 6px aqua; }
+  50% {
+    box-shadow: 0px 0px 10px 10px aqua; }
+  100% {
+    box-shadow: 0px 0px 10px 6px aqua; } }

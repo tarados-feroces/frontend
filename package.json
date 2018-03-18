@@ -1,27 +1,25 @@
 {
-  "name": "frontend",
+  "name": "deadlinez-fish",
   "version": "1.0.0",
-  "description": "Frontend (technopark)",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'hello'",
-    "eslint": "./node_modules/.bin/eslint ./src/",
-    "flint": "./node_modules/.bin/eslint --fix ./src/"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass --watch src -o src/css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tarados-feroces/frontend.git"
+    "url": "git+https://github.com/tarados-feroces/deadlinez-fish.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tarados-feroces/frontend/issues"
+    "url": "https://github.com/tarados-feroces/deadlinez-fish/issues"
   },
-  "homepage": "https://github.com/tarados-feroces/frontend#readme",
-  "devDependencies": {
-    "eslint": "^4.17.0",
-    "eslint-config-google": "^0.9.1",
-    "express": "^4.16.2"
-  },
-  "dependencies": {}
+  "homepage": "https://github.com/tarados-feroces/deadlinez-fish#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "node-sass": "^4.7.2",
+    "path": "^0.12.7"
+  }
 }

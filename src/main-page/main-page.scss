@@ -1,0 +1,194 @@
+$headers-font: 'Nunito', sans-serif;
+$header-background: #0f255d;
+$header-text-color: #e7bb41;
+
+$main-font: 'Crimson Text', sans-serif;
+$blocks-background: #143f6b;
+$blocks-text-color: #e5f4e3;
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+
+.background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-image: url("../../dragon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(12px);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: scale(1.1);
+}
+
+.main-page {
+  min-width: 1400px;
+  max-width: 1920px;
+  &__header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-color: $header-background;
+    color: $header-text-color;
+    opacity: 0.9;
+    box-shadow: 0 0 19px 6px #00071e;
+    &-logo {
+      font-family: $headers-font;
+      width: 400px;
+      cursor: pointer;
+    }
+  }
+
+  &__row {
+    display: flex;
+    width: 90%;
+    margin-left: 10%;
+    margin-top: 165px;
+
+    //margin-top: 40px;
+  }
+
+  &__content {
+    width: 50%;
+    height: 60%;
+    &-description {
+      opacity: 0.9;
+      padding: 17px 47px;
+      background-color: $blocks-background;
+      border-radius: 15px;
+      box-shadow: 4px 4px 10px 2px #00072d;
+      cursor: default;
+      &:hover {
+        animation: shining 3s ease infinite;
+      }
+    }
+    &-divider {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    &-trailer {
+      opacity: 0.9;
+      height: 400px;
+      background-color: $blocks-background;
+      box-shadow: 4px 4px 10px 2px #00072d;
+
+      & iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+      &:hover {
+      box-shadow: 0 0 10px 4px #bcdafb;
+      }
+    }
+  }
+
+  &__menu {
+    opacity: 0.9;
+    margin: auto;
+    width: 30%;
+    height: 600px;
+    background-color: $blocks-background;
+    color: $blocks-text-color;
+    border-radius: 25px;
+    box-shadow: 4px 4px 10px 2px #00072d;
+    &:hover {
+      animation: shining 3s ease infinite;
+    }
+    &-point {
+      position: relative;
+      height: 200px;
+      cursor: pointer;
+      user-select: none;
+      border-bottom: black thin solid;
+      &:hover {
+        background-color: #1956a8;
+      }
+      &:active {
+        background-color: #131b44;
+      }
+      &:first-child {
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+      }
+      &:last-child {
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+      }
+      &-text {
+        font-size: 46px;
+        font-family: $main-font;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  &__footer {
+    //position: relative;
+    //margin-top: 50px;
+  }
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  opacity: 0.8;
+  background-color: black;
+  height: 60px;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  &__content {
+    //position: inherit;
+    color: white;
+    font-size: 24px;
+    align-self: center;
+    //left: 50%;
+    //bottom: 50%;
+    //transform: translate(-50%, 50%);
+  }
+}
+
+.logo {
+  display: inline-block;
+  &__text {
+    opacity: 1;
+    font-size: 60px;
+  }
+}
+
+.text {
+  color: $blocks-text-color;
+  &__data {
+    font-family: $main-font;
+    font-size: 32px;
+  }
+}
+
+
+
+
+@keyframes shining {
+0% {
+  box-shadow: 0px 0px 10px 6px aqua;
+}
+50% {
+  box-shadow: 0px 0px 10px 10px aqua;
+  }
+100% {
+  box-shadow: 0px 0px 10px 6px aqua;
+   }
+}
