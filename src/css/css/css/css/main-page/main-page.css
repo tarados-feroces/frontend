@@ -41,7 +41,8 @@ body {
   display: flex;
   width: 90%;
   margin-left: 10%;
-  margin-top: 165px; }
+  margin-top: 165px;
+  margin-bottom: 20px; }
 
 .main-page__content {
   width: 50%;
@@ -93,6 +94,7 @@ body {
   height: 200px;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
   border-bottom: black thin solid; }
 
 .main-page__menu-point:hover {
@@ -149,8 +151,8 @@ body {
 
 @keyframes shining {
   0% {
-    box-shadow: 0px 0px 10px 6px aqua; }
+    box-shadow: 0px 0px 10px 6px #c7fbff; }
   50% {
-    box-shadow: 0px 0px 10px 10px aqua; }
+    box-shadow: 0px 0px 10px 10px #c7fbff; }
   100% {
-    box-shadow: 0px 0px 10px 6px aqua; } }
+    box-shadow: 0px 0px 10px 6px #c7fbff; } }

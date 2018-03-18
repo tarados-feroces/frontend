@@ -32,18 +32,19 @@
                         <input class="input-block__input" type="password" placeholder="Password"/>
                     </div>
                     <form>
-                        <div class="button">
+                        <div class="login-button button">
                             <p class="button__value">Sign In!</p>
                         </div>
                     </form>
             </div>
         </div>
     </div>
-    <div class="main-page__footer">
-        <div class="footer">
-            <p class="footer__content">Made by tarados-feroces</p>
-        </div>
-    </div>
 
+    <script>
+        'use strict';
+
+        const login = document.querySelector(".login-button");
+        login.addEventListener('click', () => window.location.href = "../authorized/authorized.html");
+    </script>
 </body>
 </html>
