@@ -23,20 +23,25 @@
 
         <div class="form-block">
             <div class="form-block-content">
-                    <div class="label">
-                        <p class="label-text">Sign In!</p>
+                    <div class="form-block-content__back">
+                        <img class="form-block-content__back-icon" src="../back.png">
                     </div>
-                    <div class="input-block">
-                        <input class="input-block__input" placeholder="Login"/>
-                    </div>
-                    <div class="input-block">
-                        <input class="input-block__input" type="password" placeholder="Password"/>
-                    </div>
-                    <form>
-                        <div class="login-button button">
-                            <p class="button__value">Sign In!</p>
+                    <div class="form-block-content-inputs">
+                        <div class="label">
+                            <p class="label-text">Sign In!</p>
                         </div>
-                    </form>
+                        <div class="input-block">
+                            <input class="input-block__input" placeholder="Login"/>
+                        </div>
+                        <div class="input-block">
+                            <input class="input-block__input" type="password" placeholder="Password"/>
+                        </div>
+                        <form>
+                            <div class="login-button button">
+                                <p class="button__value">Sign In!</p>
+                            </div>
+                        </form>
+                    </div>
             </div>
         </div>
     </div>
@@ -46,6 +51,8 @@
 
         const login = document.querySelector(".login-button");
         login.addEventListener('click', () => window.location.href = "../authorized/authorized.html");
+        const back = document.querySelector(".form-block-content__back");
+        back.addEventListener('click', () => window.location.href = "../main-page/main-page.html");
     </script>
 </body>
 </html>
