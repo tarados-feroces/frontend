@@ -14,8 +14,8 @@
     background-color: #d9eaff;
     outline: 0; }
     .input-block__input_error {
-      box-shadow: 0px 0px 10px 4px red; }
+      box-shadow: 0px 0px 6px 2px red; }
     .input-block__input:hover {
-      box-shadow: 0px 0px 10px 4px #bcdafb; }
+      box-shadow: 0px 0px 6px 3px #bcdafb; }
     .input-block__input:focus {
-      box-shadow: 0px 0px 10px 4px #bcdafb; }
+      box-shadow: 0px 0px 6px 3px #bcdafb; }
