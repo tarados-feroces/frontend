@@ -1,22 +1,22 @@
 {
-  "name": "deadlinez-fish",
+  "name": "frontend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo 'hello'",
     "sass": "node-sass --watch src -o src/css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tarados-feroces/deadlinez-fish.git"
+    "url": "git+https://github.com/tarados-feroces/frontend.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tarados-feroces/deadlinez-fish/issues"
+    "url": "https://github.com/tarados-feroces/frontend/issues"
   },
-  "homepage": "https://github.com/tarados-feroces/deadlinez-fish#readme",
+  "homepage": "https://github.com/tarados-feroces/frontend#readme",
   "dependencies": {
     "express": "^4.16.3",
     "node-sass": "^4.7.2",
