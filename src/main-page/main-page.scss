@@ -104,7 +104,7 @@ body {
       animation: shining 3s ease infinite;
     }
     &-point {
-      position: relative;
+      display: flex;
       height: 200px;
       cursor: pointer;
       user-select: none;
@@ -127,16 +127,11 @@ body {
       &-text {
         font-size: 46px;
         font-family: $main-font;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        margin: auto;
       }
     }
   }
   &__footer {
-    //position: relative;
-    //margin-top: 50px;
   }
 }
 
@@ -152,13 +147,9 @@ body {
   display: flex;
   justify-content: center;
   &__content {
-    //position: inherit;
     color: white;
     font-size: 24px;
     align-self: center;
-    //left: 50%;
-    //bottom: 50%;
-    //transform: translate(-50%, 50%);
   }
 }
 

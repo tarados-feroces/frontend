@@ -25,11 +25,11 @@
     margin-top: 150px; }
     .auth-page__content-modal {
       background-color: #00071e;
-      flex-basis: 80%;
+      width: 80%;
       height: 800px;
       align-self: center; }
     .auth-page__content-friends {
-      flex-basis: 20%;
+      width: 20%;
       background-color: #6d9dc5;
       display: flex;
       flex-direction: column;
@@ -37,12 +37,10 @@
       .auth-page__content-friends-label {
         display: flex;
         height: 100px;
-        border-bottom: black solid thin;
-        justify-content: center; }
+        border-bottom: black solid thin; }
         .auth-page__content-friends-label-value {
           font-size: 40px;
-          margin: 0;
-          align-self: center;
+          margin: auto;
           color: #e5f4e3;
           font-family: "Crimson Text", sans-serif; }
       .auth-page__content-friends-item {
@@ -60,13 +58,11 @@
           border-radius: 15px; }
         .auth-page__content-friends-item-login {
           display: flex;
-          width: 200px;
-          justify-content: center; }
+          width: 200px; }
           .auth-page__content-friends-item-login-value {
-            margin: 0;
+            margin: auto;
             font-size: 30px;
-            color: #e5f4e3;
-            align-self: center; }
+            color: #e5f4e3; }
         .auth-page__content-friends-item-image {
           align-self: center;
           width: 30px;

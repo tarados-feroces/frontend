@@ -77,7 +77,7 @@ body {
     .main-page__menu:hover {
       animation: shining 3s ease infinite; }
     .main-page__menu-point {
-      position: relative;
+      display: flex;
       height: 200px;
       cursor: pointer;
       user-select: none;
@@ -96,10 +96,7 @@ body {
       .main-page__menu-point-text {
         font-size: 46px;
         font-family: "Crimson Text", sans-serif;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); }
+        margin: auto; }
 
 .footer {
   position: absolute;
