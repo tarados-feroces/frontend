@@ -15,43 +15,44 @@
       width: 80%;
       height: 800px;
       align-self: center; }
-    .auth-page__content-friends {
-      width: 20%;
-      background-color: #6d9dc5;
+
+.friends {
+  width: 20%;
+  background-color: #6d9dc5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .friends-label {
+    display: flex;
+    height: 100px;
+    border-bottom: black solid thin; }
+    .friends-label-value {
+      font-size: 40px;
+      margin: auto;
+      color: #e5f4e3;
+      font-family: "Crimson Text", sans-serif; }
+  .friends-item {
+    height: 100px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #e7a516;
+    border-radius: 5px; }
+    .friends-item-avatar {
+      width: 80px;
+      height: 80px;
+      align-self: center;
+      opacity: 1;
+      border-radius: 15px; }
+    .friends-item-login {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between; }
-      .auth-page__content-friends-label {
-        display: flex;
-        height: 100px;
-        border-bottom: black solid thin; }
-        .auth-page__content-friends-label-value {
-          font-size: 40px;
-          margin: auto;
-          color: #e5f4e3;
-          font-family: "Crimson Text", sans-serif; }
-      .auth-page__content-friends-item {
-        height: 100px;
-        margin: 5px;
-        display: flex;
-        justify-content: space-around;
-        background-color: #e7a516;
-        border-radius: 5px; }
-        .auth-page__content-friends-item-avatar {
-          width: 80px;
-          height: 80px;
-          align-self: center;
-          opacity: 1;
-          border-radius: 15px; }
-        .auth-page__content-friends-item-login {
-          display: flex;
-          width: 200px; }
-          .auth-page__content-friends-item-login-value {
-            margin: auto;
-            font-size: 30px;
-            color: #e5f4e3; }
-        .auth-page__content-friends-item-image {
-          align-self: center;
-          width: 30px;
-          height: 30px;
-          cursor: pointer; }
+      width: 200px; }
+      .friends-item-login-value {
+        margin: auto;
+        font-size: 30px;
+        color: #e5f4e3; }
+    .friends-item-image {
+      align-self: center;
+      width: 30px;
+      height: 30px;
+      cursor: pointer; }

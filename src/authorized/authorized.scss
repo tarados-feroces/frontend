@@ -28,55 +28,58 @@ $blocks-text-color: #e5f4e3;
       align-self: center;
     }
 
-    &-friends {
-      width: 20%;
-      background-color: #6d9dc5;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      &-label {
-        display: flex;
-        height: 100px;
-        border-bottom: black solid thin;
-        &-value {
-          font-size: 40px;
-          margin: auto;
-          color: $blocks-text-color;
-          font-family: $main-font;
-        }
-      }
-      &-item {
-        height: 100px;
-        margin: 5px;
-        display: flex;
-        justify-content: space-around;
-        background-color: #e7a516;
-        border-radius: 5px;
-        &-avatar {
-          width: 80px;
-          height: 80px;
-          align-self: center;
-          opacity: 1;
-          border-radius: 15px;
-        }
-        &-login {
-          display: flex;
-          width: 200px;
-          &-value {
-            margin: auto;
-            font-size: 30px;
-            color: $blocks-text-color;
-          }
-        }
-        &-image {
-          align-self: center;
-          width: 30px;
-          height: 30px;
-          cursor: pointer;
-        }
-      }
-    }
+
   }
 
 }
+
+.friends {
+  width: 20%;
+  background-color: #6d9dc5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &-label {
+    display: flex;
+    height: 100px;
+    border-bottom: black solid thin;
+    &-value {
+      font-size: 40px;
+      margin: auto;
+      color: $blocks-text-color;
+      font-family: $main-font;
+    }
+  }
+  &-item {
+    height: 100px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #e7a516;
+    border-radius: 5px;
+    &-avatar {
+      width: 80px;
+      height: 80px;
+      align-self: center;
+      opacity: 1;
+      border-radius: 15px;
+    }
+    &-login {
+      display: flex;
+      width: 200px;
+      &-value {
+        margin: auto;
+        font-size: 30px;
+        color: $blocks-text-color;
+      }
+    }
+    &-image {
+      align-self: center;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+  }
+}
+
 
