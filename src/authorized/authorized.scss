@@ -34,9 +34,11 @@ $blocks-text-color: #e5f4e3;
       &-header {
       }
       &-data {
+        align-self: center;
         display: flex;
         width: 100%;
         height: 630px;
+        justify-content: center;
       }
     }
   }
@@ -176,6 +178,26 @@ $blocks-text-color: #e5f4e3;
       width: 64px;
       height: 64px;
     }
+  }
+}
+
+.scoreboard {
+  width: 60%;
+  //height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  &__pagination {
+    margin-top: 25px;
+    width: 450px;
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    &-go-button {
+
+    }
+
   }
 }
 
