@@ -39,11 +39,10 @@ body {
   &__row {
     display: flex;
     flex-direction: row;
-    //width: 90%;
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 50px;
-    height: 100vh;
+    height: 93vh;
     justify-content: space-around;
     align-self: center;
   }
@@ -62,7 +61,7 @@ body {
       cursor: default;
 
       &:hover {
-        animation: shining 3s ease infinite;
+        animation: shining 1.15s ease infinite;
       }
     }
     &-divider {
@@ -70,7 +69,6 @@ body {
       margin-bottom: 30px;
     }
     &-trailer {
-      opacity: 0.9;
       height: 400px;
       background-color: $blocks-background;
       box-shadow: 4px 4px 10px 2px #00072d;
@@ -95,7 +93,7 @@ body {
     color: $blocks-text-color;
     border-radius: 25px;
     box-shadow: 4px 4px 10px 2px #00072d;
-    animation: shining 3s ease infinite;
+    animation: shining 1.15s ease infinite;
 
     &-point {
       display: flex;

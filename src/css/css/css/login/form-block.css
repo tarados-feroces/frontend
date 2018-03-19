@@ -8,7 +8,7 @@
   border-radius: 15px;
   box-shadow: 4px 4px 10px 2px #00072d;
   animation: fadeIn 1.5s;
-  animation: form-block-shining 3s ease infinite; }
+  animation: form-block-shining 1.15s ease infinite; }
 
 .form-block-content-inputs {
   width: 500px;
