@@ -27,6 +27,7 @@ body {
 }
 
 .main-page {
+  display: flex;
   animation: fadeIn 1.5s;
   min-width: 1400px;
   max-width: 1920px;
@@ -36,15 +37,21 @@ body {
 
   &__row {
     display: flex;
-    width: 90%;
-    margin-left: 10%;
-    margin-top: 165px;
-    margin-bottom: 20px;
+    flex-direction: row;
+    //width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 50px;
+    height: 100vh;
+    justify-content: space-around;
+    align-self: center;
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
     width: 50%;
-    height: 60%;
+    align-self: center;
     &-description {
       opacity: 0.9;
       padding: 17px 47px;
@@ -79,10 +86,10 @@ body {
   }
 
   &__menu {
+    //display: flex;
+    align-self: center;
     opacity: 0.9;
-    margin: auto;
     width: 30%;
-    height: 600px;
     background-color: $blocks-background;
     color: $blocks-text-color;
     border-radius: 25px;
