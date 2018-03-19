@@ -24,11 +24,11 @@
     user-select: none; }
   .button-play {
     background-color: darkred;
-    width: 200px;
-    margin: auto; }
+    width: 250px;
+    margin: auto;
+    animation: button-shining 3s ease infinite; }
     .button-play:hover {
-      background-color: #e7bb41;
-      animation: button-shining 3s ease infinite; }
+      background-color: #e7bb41; }
     .button-play:active {
       background-color: green; }
     .button-play__value {
