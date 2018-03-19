@@ -19,7 +19,9 @@
     display: flex;
     flex-flow: row;
     justify-content: space-around;
-    border-radius: 5px; }
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px; }
     .header__user-info-avatar {
       width: 80px;
       height: 80px;

@@ -30,6 +30,8 @@ $blocks-text-color: #e5f4e3;
     flex-flow: row;
     justify-content: space-around;
     border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
 
     &-avatar {
       width: 80px;
@@ -89,5 +91,4 @@ $blocks-text-color: #e5f4e3;
     }
 
   }
-
 }
