@@ -28,13 +28,17 @@ $blocks-text-color: #e5f4e3;
       align-self: center;
       border-radius: 25px;
       box-shadow: 4px 4px 10px 2px #00072d;
+      opacity: 0.95;
       display: flex;
       flex-direction: column;
       &-header {
       }
       &-data {
+        align-self: center;
+        display: flex;
         width: 100%;
         height: 630px;
+        justify-content: center;
       }
     }
   }
@@ -45,6 +49,7 @@ $blocks-text-color: #e5f4e3;
   background-color: $blocks-background;
   display: flex;
   flex-direction: column;
+  opacity: 0.9;
   height: 700px;
   border-radius: 25px;
   box-shadow: 4px 4px 10px 2px #00072d;
@@ -163,11 +168,36 @@ $blocks-text-color: #e5f4e3;
   &-invite {
     display: flex;
     justify-content: center;
+    width: 80px;
+    height: 100px;
     &-button {
-      align-self: center;
-      width: 80px;
-      height: 80px;
+      user-select: none;
+      cursor: pointer;
+      margin: auto;
+      //align-self: center;
+      width: 64px;
+      height: 64px;
     }
+  }
+}
+
+.scoreboard {
+  width: 60%;
+  //height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  &__pagination {
+    margin-top: 25px;
+    width: 450px;
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    &-go-button {
+
+    }
+
   }
 }
 

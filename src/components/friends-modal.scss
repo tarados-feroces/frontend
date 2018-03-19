@@ -1,13 +1,15 @@
 $main-font: 'Crimson Text', sans-serif;
-$blocks-background: #143f6b;
+$blocks-background: #294e8f;
 
 .friends-modal {
   position: absolute;
+  z-index: 999;
   width: 200px;
   display: flex;
   flex-direction: column;
   background-color: $blocks-background;
   border-radius: 15px;
+  border: thin black solid;
   &-points {
     display: flex;
     width: 100%;
