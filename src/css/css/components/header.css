@@ -1,0 +1,77 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: #0f255d;
+  color: #e7bb41;
+  opacity: 0.9;
+  box-shadow: 0 0 19px 6px #00071e; }
+
+.header-logo {
+  font-family: "Nunito", sans-serif;
+  width: 400px;
+  cursor: pointer; }
+
+.header__user-info {
+  flex-basis: 20%;
+  background-color: #6d9dc5;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around; }
+
+.header__user-info-avatar {
+  width: 80px;
+  height: 80px;
+  align-self: center;
+  opacity: 1;
+  border-radius: 15px; }
+
+.header__user-info-data-block {
+  display: flex;
+  flex-flow: row wrap;
+  width: 200px;
+  justify-content: space-around; }
+
+.header__user-info-data-block-login {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+  border-bottom: black thin solid; }
+
+.header__user-info-data-block-login-value {
+  margin: 0;
+  font-size: 30px;
+  color: #e5f4e3;
+  align-self: center; }
+
+.header__user-info-data-block-score {
+  width: 90px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-around; }
+
+.header__user-info-data-block-score-image {
+  align-self: center;
+  width: 30px;
+  height: 30px; }
+
+.header__user-info-data-block-score-number {
+  display: flex; }
+
+.header__user-info-data-block-score-number-value {
+  margin: auto;
+  font-size: 20px;
+  color: white; }
+
+.header__user-info-settings {
+  display: flex;
+  margin-right: 5px; }
+
+.header__user-info-settings-value {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  margin: auto; }
