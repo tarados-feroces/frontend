@@ -7,14 +7,16 @@
   opacity: 0.95;
   border-radius: 15px;
   box-shadow: 4px 4px 10px 2px #00072d;
-  &:hover {
-    animation: form-block-shining 3s ease infinite;
-  }
+  animation: fadeIn 1.5s;
+  //&:hover {
+  animation: form-block-shining 3s ease infinite;
+  //}
   &-inputs {
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
+    padding: 10px;
   }
   &__back {
     display: flex;
@@ -23,6 +25,7 @@
     cursor: pointer;
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
+    border-right: thin black solid;
     &:hover {
       background-color: #1956a8;
     }
@@ -33,6 +36,16 @@
       margin: auto;
     }
   }
+}
+
+.login-button {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.signup-button {
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .form-block {

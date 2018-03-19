@@ -16,6 +16,7 @@ body {
   transform: scale(1.1); }
 
 .main-page {
+  animation: fadeIn 1.5s;
   min-width: 1400px;
   max-width: 1920px; }
   .main-page__header {
@@ -59,9 +60,8 @@ body {
     background-color: #143f6b;
     color: #e5f4e3;
     border-radius: 25px;
-    box-shadow: 4px 4px 10px 2px #00072d; }
-    .main-page__menu:hover {
-      animation: shining 3s ease infinite; }
+    box-shadow: 4px 4px 10px 2px #00072d;
+    animation: shining 3s ease infinite; }
     .main-page__menu-point {
       display: flex;
       height: 200px;
@@ -118,3 +118,9 @@ body {
     box-shadow: 0px 0px 10px 10px #c7fbff; }
   100% {
     box-shadow: 0px 0px 10px 6px #c7fbff; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
