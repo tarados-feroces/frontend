@@ -9,6 +9,8 @@
   margin-top: 10px;
   cursor: pointer;
   animation: button-shining 1.15s ease infinite; }
+  .button_no-animation {
+    animation: none; }
   .button:hover {
     background-color: #1956a8;
     animation: button-shining 1.15s ease infinite;

@@ -12,11 +12,14 @@
     <link href="../css/components/label.css" type="text/css" rel="stylesheet">
     <link href="../css/components/header.css" type="text/css" rel="stylesheet">
     <link href="../css/components/friends-modal.css" type="text/css" rel="stylesheet">
+    <link href="../css/login/form-block.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <div class="background"></div>
 
     <div class="auth-page">
+
+
         <div class="auth-page__header header">
             <div class="header-logo">
                 <img class="header-logo-content" src="../Deadlinez.png">
@@ -53,6 +56,7 @@
             </div>
         </div>
 
+
         <div class="auth-page__content">
             <div class="auth-page__content-modal">
                 <div class="auth-page__content-modal-header modal-header">
@@ -66,8 +70,42 @@
                         <p class="modal-header__point-value">About</p>
                     </div>
                 </div>
-                <div class="auth-page__content-modal-data"></div>
+                <div class="auth-page__content-modal-data">
+                        <div class="form-block-content form-block-content_no-border">
+                            <div class="form-block-content-inputs">
+                                <div class="label">
+                                    <p class="label-text">Settings</p>
+                                </div>
+                                <div class="input-block_avatar">
+                                    <img class="input-block_avatar avatar" src="../user-logo.jpg"/>
+                                    <div class="file-upload">
+                                        <label class="file-upload-label">
+                                            <input type="file" name="file">
+                                            <span>Выберите файл</span>
+                                        </label>
+                                    </div>
+                                    <!--<input type="file" class="input-block_avatar__input"/>-->
+                                </div>
+                                <div class="input-block">
+                                    <input class="input-block__input" placeholder="E-mail"/>
+                                </div>
+                                <div class="input-block">
+                                    <input class="input-block__input" placeholder="Login"/>
+                                </div>
+                                <div class="input-block">
+                                    <input class="input-block__input" type="password" placeholder="Password"/>
+                                </div>
+                                <form>
+                                    <div class="login-button button button_no-animation">
+                                        <p class="button__value">Save</p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                </div>
             </div>
+
+
             <div class="friends-modal hidden">
                 <div class="friends-modal-points">
                     <p class="friends-modal-points-text">Invite</p>
@@ -79,6 +117,7 @@
                     <p class="friends-modal-points-text">View profile</p>
                 </div>
             </div>
+
 
             <div class="auth-page__content-friends friends">
                 <div class="friends-label">
@@ -106,9 +145,9 @@
                     <img class="friends-item-image" src="../menu.png">
                 </div>
             </div>
-
-
         </div>
+
+
         <div class="auth-page__content-party party-lay">
             <div class="party">
                 <div class="party-friend">
@@ -145,8 +184,6 @@
             });
         });
 
-        const settings = document.querySelector('.header__user-info-settings-value');
-        settings.addEventListener('click', () => window.location.href = "../settings/settings.html");
     </script>
 </body>
 </html>

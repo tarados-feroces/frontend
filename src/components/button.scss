@@ -10,6 +10,10 @@
   cursor: pointer;
   animation: button-shining 1.15s ease infinite;
 
+  &_no-animation {
+    animation: none;
+  }
+
   &:hover {
     background-color: #1956a8;
     animation: button-shining 1.15s ease infinite;
@@ -51,8 +55,6 @@
     }
 
   }
-
-
 }
 
 @keyframes button-shining {
