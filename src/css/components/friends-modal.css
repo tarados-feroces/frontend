@@ -3,8 +3,9 @@
   width: 200px;
   display: flex;
   flex-direction: column;
-  background-color: #143f6b;
-  border-radius: 15px; }
+  background-color: #294e8f;
+  border-radius: 15px;
+  border: thin black solid; }
   .friends-modal-points {
     display: flex;
     width: 100%;

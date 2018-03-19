@@ -125,8 +125,10 @@
       border-radius: 15px; }
   .party-invite {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    width: 80px;
+    height: 100px; }
     .party-invite-button {
-      align-self: center;
-      width: 80px;
-      height: 80px; }
+      margin: auto;
+      width: 64px;
+      height: 64px; }
