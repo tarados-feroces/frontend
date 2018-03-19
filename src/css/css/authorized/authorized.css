@@ -38,7 +38,7 @@
 
 .friends-label {
   display: flex;
-  height: 100px;
+  height: 60px;
   border-bottom: black solid thin;
   background-color: #0f255d;
   border-top-right-radius: 25px;
@@ -123,7 +123,7 @@
   margin-top: 20px; }
 
 .party {
-  width: 440px;
+  width: 450px;
   height: 100px;
   display: flex;
   background-color: #143f6b;
@@ -133,7 +133,6 @@
   justify-content: space-around; }
 
 .party-friend {
-  width: 100px;
   display: flex;
   justify-content: center; }
 
@@ -144,4 +143,10 @@
   border-radius: 15px; }
 
 .party-invite {
-  width: 100px; }
+  display: flex;
+  justify-content: center; }
+
+.party-invite-button {
+  align-self: center;
+  width: 80px;
+  height: 80px; }

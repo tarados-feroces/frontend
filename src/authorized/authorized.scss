@@ -50,7 +50,7 @@ $blocks-text-color: #e5f4e3;
   box-shadow: 4px 4px 10px 2px #00072d;
   &-label {
     display: flex;
-    height: 100px;
+    height: 60px;
     border-bottom: black solid thin;
     background-color: $header-background;
     border-top-right-radius: 25px;
@@ -141,7 +141,7 @@ $blocks-text-color: #e5f4e3;
   margin-top: 20px;
 }
 .party {
-  width: 440px;
+  width: 450px;
   height: 100px;
   display: flex;
   background-color: $blocks-background;
@@ -150,7 +150,6 @@ $blocks-text-color: #e5f4e3;
   border-right: thin solid black;
   justify-content: space-around;
   &-friend {
-    width: 100px;
     display: flex;
     justify-content: center;
     &-logo {
@@ -161,7 +160,13 @@ $blocks-text-color: #e5f4e3;
     }
   }
   &-invite {
-    width: 100px;
+    display: flex;
+    justify-content: center;
+    &-button {
+      align-self: center;
+      width: 80px;
+      height: 80px;
+    }
   }
 }
 
