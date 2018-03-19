@@ -1,4 +1,5 @@
 .auth-page {
+  animation: fadeIn 1.5s;
   min-width: 1400px;
   max-width: 1920px; }
 
@@ -18,25 +19,25 @@
   height: 800px;
   align-self: center; }
 
-.auth-page__content-friends {
+.friends {
   width: 20%;
   background-color: #6d9dc5;
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
 
-.auth-page__content-friends-label {
+.friends-label {
   display: flex;
   height: 100px;
   border-bottom: black solid thin; }
 
-.auth-page__content-friends-label-value {
+.friends-label-value {
   font-size: 40px;
   margin: auto;
   color: #e5f4e3;
   font-family: "Crimson Text", sans-serif; }
 
-.auth-page__content-friends-item {
+.friends-item {
   height: 100px;
   margin: 5px;
   display: flex;
@@ -44,23 +45,23 @@
   background-color: #e7a516;
   border-radius: 5px; }
 
-.auth-page__content-friends-item-avatar {
+.friends-item-avatar {
   width: 80px;
   height: 80px;
   align-self: center;
   opacity: 1;
   border-radius: 15px; }
 
-.auth-page__content-friends-item-login {
+.friends-item-login {
   display: flex;
   width: 200px; }
 
-.auth-page__content-friends-item-login-value {
+.friends-item-login-value {
   margin: auto;
   font-size: 30px;
   color: #e5f4e3; }
 
-.auth-page__content-friends-item-image {
+.friends-item-image {
   align-self: center;
   width: 30px;
   height: 30px;

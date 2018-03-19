@@ -7,10 +7,12 @@
   justify-content: center;
   box-shadow: 4px 4px 10px 2px #00072d;
   margin-top: 10px;
-  cursor: pointer; }
+  cursor: pointer;
+  animation: button-shining 3s ease infinite; }
   .button:hover {
     background-color: #1956a8;
-    animation: button-shining 3s ease infinite; }
+    animation: button-shining 3s ease infinite;
+    box-shadow: aqua; }
   .button:active {
     background-color: #131b44;
     animation: none;
@@ -22,11 +24,11 @@
     user-select: none; }
   .button-play {
     background-color: darkred;
-    width: 200px;
-    margin: auto; }
+    width: 250px;
+    margin: auto;
+    animation: button-shining 3s ease infinite; }
     .button-play:hover {
-      background-color: #e7bb41;
-      animation: button-shining 3s ease infinite; }
+      background-color: #e7bb41; }
     .button-play:active {
       background-color: green; }
     .button-play__value {
@@ -37,8 +39,8 @@
 
 @keyframes button-shining {
   0% {
-    box-shadow: 0px 0px 10px 1px white; }
+    box-shadow: 0px 0px 10px 1px aqua; }
   50% {
-    box-shadow: 0px 0px 10px 4px white; }
+    box-shadow: 0px 0px 10px 4px aqua; }
   100% {
-    box-shadow: 0px 0px 10px 1px white; } }
+    box-shadow: 0px 0px 10px 1px aqua; } }
