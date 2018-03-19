@@ -8,10 +8,10 @@
   box-shadow: 4px 4px 10px 2px #00072d;
   margin-top: 10px;
   cursor: pointer;
-  animation: button-shining 3s ease infinite; }
+  animation: button-shining 1.15s ease infinite; }
   .button:hover {
     background-color: #1956a8;
-    animation: button-shining 3s ease infinite;
+    animation: button-shining 1.15s ease infinite;
     box-shadow: aqua; }
   .button:active {
     background-color: #131b44;
@@ -23,10 +23,10 @@
     align-self: center;
     user-select: none; }
   .button-play {
-    background-color: darkred;
+    background-color: #940000;
     width: 250px;
     margin: auto;
-    animation: button-shining 3s ease infinite; }
+    animation: button-shining 1.15s ease infinite; }
     .button-play:hover {
       background-color: #e7bb41; }
     .button-play:active {

@@ -9,13 +9,14 @@ body {
   background-image: url("../../background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(12px);
+  filter: brightness(70%);
   width: 100%;
   height: 100%;
   z-index: -1;
   transform: scale(1.1); }
 
 .main-page {
+  display: flex;
   animation: fadeIn 1.5s;
   min-width: 1400px;
   max-width: 1920px; }
@@ -23,13 +24,18 @@ body {
     justify-content: center; }
   .main-page__row {
     display: flex;
-    width: 90%;
-    margin-left: 10%;
-    margin-top: 165px;
-    margin-bottom: 20px; }
+    flex-direction: row;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 50px;
+    height: 93vh;
+    justify-content: space-around;
+    align-self: center; }
   .main-page__content {
+    display: flex;
+    flex-direction: column;
     width: 50%;
-    height: 60%; }
+    align-self: center; }
     .main-page__content-description {
       opacity: 0.9;
       padding: 17px 47px;
@@ -38,12 +44,11 @@ body {
       box-shadow: 4px 4px 10px 2px #00072d;
       cursor: default; }
       .main-page__content-description:hover {
-        animation: shining 3s ease infinite; }
+        animation: shining 1.15s ease infinite; }
     .main-page__content-divider {
       margin-top: 30px;
       margin-bottom: 30px; }
     .main-page__content-trailer {
-      opacity: 0.9;
       height: 400px;
       background-color: #143f6b;
       box-shadow: 4px 4px 10px 2px #00072d; }
@@ -53,15 +58,14 @@ body {
       .main-page__content-trailer:hover {
         box-shadow: 0 0 10px 4px #bcdafb; }
   .main-page__menu {
+    align-self: center;
     opacity: 0.9;
-    margin: auto;
     width: 30%;
-    height: 600px;
     background-color: #143f6b;
     color: #e5f4e3;
     border-radius: 25px;
     box-shadow: 4px 4px 10px 2px #00072d;
-    animation: shining 3s ease infinite; }
+    animation: shining 1.15s ease infinite; }
     .main-page__menu-point {
       display: flex;
       height: 200px;
@@ -110,6 +114,9 @@ body {
   .text__data {
     font-family: "Crimson Text", sans-serif;
     font-size: 32px; }
+
+.hidden {
+  display: none !important; }
 
 @keyframes shining {
   0% {

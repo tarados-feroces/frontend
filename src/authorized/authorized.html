@@ -11,6 +11,7 @@
     <link href="../css/components/input.css" type="text/css" rel="stylesheet">
     <link href="../css/components/label.css" type="text/css" rel="stylesheet">
     <link href="../css/components/header.css" type="text/css" rel="stylesheet">
+    <link href="../css/components/friends-modal.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <div class="background"></div>
@@ -32,7 +33,7 @@
                         <p class="header__user-info-data-block-login-value">danchetto</p>
                     </div>
                     <div class="header__user-info-data-block-score">
-                        <img class="header__user-info-data-block-score-image" src="../money.png">
+                        <img class="header__user-info-data-block-score-image" src="../coins.png">
                         <div class="header__user-info-data-block-score-number">
                             <p class="header__user-info-data-block-score-number-value">645$</p>
                         </div>
@@ -54,8 +55,31 @@
 
         <div class="auth-page__content">
             <div class="auth-page__content-modal">
-
+                <div class="auth-page__content-modal-header modal-header">
+                    <div class="modal-header__point">
+                        <p class="modal-header__point-value">Scoreboard</p>
+                    </div>
+                    <div class="modal-header__point">
+                        <p class="modal-header__point-value">News</p>
+                    </div>
+                    <div class="modal-header__point">
+                        <p class="modal-header__point-value">About</p>
+                    </div>
+                </div>
+                <div class="auth-page__content-modal-data"></div>
             </div>
+            <div class="friends-modal hidden">
+                <div class="friends-modal-points">
+                    <p class="friends-modal-points-text">Invite</p>
+                </div>
+                <div class="friends-modal-points">
+                    <p class="friends-modal-points-text">Send</p>
+                </div>
+                <div class="friends-modal-points">
+                    <p class="friends-modal-points-text">View profile</p>
+                </div>
+            </div>
+
             <div class="auth-page__content-friends friends">
                 <div class="friends-label">
                     <p class="friends-label-value">Friends</p>
@@ -82,8 +106,45 @@
                     <img class="friends-item-image" src="../friend-action.png">
                 </div>
             </div>
+
+
+        </div>
+        <div class="auth-page__content-party party-lay">
+            <div class="party">
+                <div class="party-friend">
+                    <img class="party-friend-logo" src="../user-logo.jpg">
+                </div>
+                <div class="party-friend">
+                    <img class="party-friend-logo" src="../user-logo.jpg">
+                </div>
+                <div class="party-friend">
+                    <img class="party-friend-logo" src="../user-logo.jpg">
+                </div>
+                <div class="party-friend">
+                    <img class="party-friend-logo" src="../user-logo.jpg">
+                </div>
+                <div class="party-invite">
+                    <img class="party-invite-button" src="../party-plus.png">
+                </div>
+            </div>
         </div>
     </div>
 
+    <script>
+        const friends = [...document.getElementsByClassName('friends-item-image')];
+        const modal = document.querySelector('.friends-modal');
+        friends.forEach((item) => {
+            item.addEventListener('click', (event) => {
+            const icon = event.currentTarget;
+            // modal.style.backgroundColor = 'black';
+            const x = icon.x - 200;
+            modal.style.left = `${x}px`;
+            modal.style.top = `${icon.y}px`;
+            modal.classList.toggle('hidden');
+            // if (modal.classList)
+            });
+        });
+
+    </script>
 </body>
 </html>
