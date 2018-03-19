@@ -17,32 +17,45 @@ $blocks-text-color: #e5f4e3;
   &__content {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
     margin-top: 150px;
 
     &-modal {
-      background-color: #00071e;
-      width: 80%;
-      height: 800px;
+      background-color: $blocks-background;
+      width: 70%;
+      height: 700px;
       align-self: center;
+      border-radius: 25px;
+      box-shadow: 4px 4px 10px 2px #00072d;
+      display: flex;
+      flex-direction: column;
+      &-header {
+      }
+      &-data {
+        width: 100%;
+        height: 630px;
+      }
     }
-
-
   }
-
 }
 
 .friends {
   width: 20%;
-  background-color: #6d9dc5;
+  background-color: $blocks-background;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  height: 700px;
+  border-radius: 25px;
+  box-shadow: 4px 4px 10px 2px #00072d;
   &-label {
     display: flex;
     height: 100px;
     border-bottom: black solid thin;
+    background-color: $header-background;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+
     &-value {
       font-size: 40px;
       margin: auto;
@@ -52,11 +65,12 @@ $blocks-text-color: #e5f4e3;
   }
   &-item {
     height: 100px;
-    margin: 5px;
+    //margin: 5px;
     display: flex;
     justify-content: space-around;
-    background-color: #e7a516;
+    background-color: $blocks-background;
     border-radius: 5px;
+    border-bottom: thin solid black;
     &-avatar {
       width: 80px;
       height: 80px;
@@ -79,6 +93,75 @@ $blocks-text-color: #e5f4e3;
       height: 30px;
       cursor: pointer;
     }
+  }
+}
+
+.modal-header {
+  width: 100%;
+  height: 60px;
+  background-color: $header-background;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  //box-shadow: 0 4px 2px -2px #00071e;
+  &__point {
+    height: 60px;
+    flex-grow: 1;
+    flex-basis: 300px;
+    display: flex;
+    user-select: none;
+    background-color: $header-background;
+    cursor: pointer;
+    border-left: thin solid black;
+    border-right: thin solid black;
+    border-bottom: thin solid black;
+    &:hover {
+      background-color: #1956a8;
+    }
+    &:first-child{
+      border-top-left-radius: 25px;
+      border-left: none;
+    }
+    &:last-child{
+      border-top-right-radius: 25px;
+      border-right: none;
+    }
+    &-value {
+      font-size: 40px;
+      margin: auto;
+      color: $blocks-text-color;
+    }
+  }
+}
+
+.party-lay {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 20px;
+}
+.party {
+  width: 440px;
+  height: 100px;
+  display: flex;
+  background-color: $blocks-background;
+  border-radius: 25px;
+  border-left: thin solid black;
+  border-right: thin solid black;
+  justify-content: space-around;
+  &-friend {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    &-logo {
+      align-self: center;
+      width: 80px;
+      height: 80px;
+      border-radius: 15px;
+    }
+  }
+  &-invite {
+    width: 100px;
   }
 }
 
