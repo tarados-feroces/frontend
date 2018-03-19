@@ -163,10 +163,13 @@ $blocks-text-color: #e5f4e3;
   &-invite {
     display: flex;
     justify-content: center;
+    width: 80px;
+    height: 100px;
     &-button {
-      align-self: center;
-      width: 80px;
-      height: 80px;
+      margin: auto;
+      //align-self: center;
+      width: 64px;
+      height: 64px;
     }
   }
 }
