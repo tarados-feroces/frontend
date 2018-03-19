@@ -3,6 +3,7 @@ $blocks-background: #294e8f;
 
 .friends-modal {
   position: absolute;
+  z-index: 999;
   width: 200px;
   display: flex;
   flex-direction: column;
