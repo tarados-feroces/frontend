@@ -56,7 +56,7 @@
         <div class="auth-page__content">
             <div class="auth-page__content-modal">
                 <div class="auth-page__content-modal-header modal-header">
-                    <div class="modal-header__point">
+                    <div class="modal-header__point point-score">
                         <p class="modal-header__point-value">Scoreboard</p>
                     </div>
                     <div class="modal-header__point">
@@ -147,6 +147,9 @@
 
         const settings = document.querySelector('.header__user-info-settings-value');
         settings.addEventListener('click', () => window.location.href = "../settings/settings.html");
+
+        const scoreboard = document.querySelector('.modal-header__point, .point-score');
+        scoreboard.addEventListener('click', () => window.location.href = "../scoreboard/scoreboard.html");
     </script>
 </body>
 </html>
