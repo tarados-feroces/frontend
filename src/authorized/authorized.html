@@ -11,6 +11,7 @@
     <link href="../css/components/input.css" type="text/css" rel="stylesheet">
     <link href="../css/components/label.css" type="text/css" rel="stylesheet">
     <link href="../css/components/header.css" type="text/css" rel="stylesheet">
+    <link href="../css/components/friends-modal.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <div class="background"></div>
@@ -56,6 +57,18 @@
             <div class="auth-page__content-modal">
 
             </div>
+            <div class="friends-modal hidden">
+                <div class="friends-modal-points">
+                    <p class="friends-modal-points-text">Invite</p>
+                </div>
+                <div class="friends-modal-points">
+                    <p class="friends-modal-points-text">Send</p>
+                </div>
+                <div class="friends-modal-points">
+                    <p class="friends-modal-points-text">View profile</p>
+                </div>
+            </div>
+
             <div class="auth-page__content-friends friends">
                 <div class="friends-label">
                     <p class="friends-label-value">Friends</p>
@@ -85,5 +98,21 @@
         </div>
     </div>
 
+    <script>
+        const friends = [...document.getElementsByClassName('friends-item-image')];
+        const modal = document.querySelector('.friends-modal');
+        friends.forEach((item) => {
+            item.addEventListener('click', (event) => {
+            const icon = event.currentTarget;
+            // modal.style.backgroundColor = 'black';
+            const x = icon.x - 200;
+            modal.style.left = `${x}px`;
+            modal.style.top = `${icon.y}px`;
+            modal.classList.toggle('hidden');
+            // if (modal.classList)
+            });
+        });
+
+    </script>
 </body>
 </html>
