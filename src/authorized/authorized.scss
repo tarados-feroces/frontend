@@ -33,8 +33,11 @@ $blocks-text-color: #e5f4e3;
       &-header {
       }
       &-data {
-        width: 100%;
+        width: 90%;
+        align-self: center;
         height: 630px;
+        display: flex;
+        justify-content: center;
       }
     }
   }
@@ -167,6 +170,26 @@ $blocks-text-color: #e5f4e3;
       width: 80px;
       height: 80px;
     }
+  }
+}
+
+.scoreboard {
+  width: 60%;
+  //height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  &__pagination {
+    margin-top: 25px;
+    width: 450px;
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    &-go-button {
+
+    }
+
   }
 }
 
