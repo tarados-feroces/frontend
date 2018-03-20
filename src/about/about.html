@@ -51,13 +51,18 @@
                     <img class="header__user-info-settings-value" src="../settings.svg">
                 </div>
             </div>
+            <div class="header__user-info-settings">
+                <div class="header__user-info-settings-value logout">
+                    <img class="header__user-info-settings-value" src="../logout.png">
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="auth-page__content">
         <div class="auth-page__content-modal">
             <div class="auth-page__content-modal-header modal-header">
-                <div class="modal-header__point">
+                <div class="modal-header__point point-score">
                     <p class="modal-header__point-value">Scoreboard</p>
                 </div>
                 <div class="modal-header__point">
@@ -168,12 +173,17 @@
             // if (modal.classList)
         });
     });
+    const logout = document.querySelector('.logout');
+    logout.addEventListener('click', () => window.location.href = "../main-page/main-page.html");
 
     const settings = document.querySelector('.header__user-info-settings-value');
     settings.addEventListener('click', () => window.location.href = "../settings/settings.html");
 
-    const scoreboard = document.querySelector('.modal-header__point, .point-score');
+    const scoreboard = document.querySelector('.point-score');
     scoreboard.addEventListener('click', () => window.location.href = "../scoreboard/scoreboard.html");
+
+    const about = document.querySelector('.point-about');
+    about.addEventListener('click', () => window.location.href = "../about/about.html");
 </script>
 </body>
 </html>
