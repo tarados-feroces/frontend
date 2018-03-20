@@ -160,6 +160,13 @@
 
     </div>
     <div class="auth-page__content-party party-lay">
+
+        <div class="online-info">
+            <p class="online-info__content">Online: 500</p>
+            <p class="online-info__content">Now playing: 500</p>
+            <p class="online-info__content">Now searching: 500</p>
+        </div>
+
         <div class="party">
             <div class="party-friend">
                 <img class="party-friend-logo" src="../user-logo.jpg">
@@ -185,16 +192,21 @@
     const modal = document.querySelector('.friends-modal');
     friends.forEach((item) => {
         item.addEventListener('click', (event) => {
-            const icon = event.currentTarget;
-            // modal.style.backgroundColor = 'black';
-            const x = icon.x - 200;
-            modal.style.left = `${x}px`;
-            modal.style.top = `${icon.y}px`;
-            modal.classList.toggle('hidden');
-            // if (modal.classList)
-        });
+        const icon = event.currentTarget;
+    // modal.style.backgroundColor = 'black';
+    const x = icon.x - 200;
+    modal.style.left = `${x}px`;
+    modal.style.top = `${icon.y}px`;
+    modal.classList.toggle('hidden');
+    // if (modal.classList)
+    });
     });
 
+    const settings = document.querySelector('.header__user-info-settings-value');
+    settings.addEventListener('click', () => window.location.href = "../settings/settings.html");
+
+    const scoreboard = document.querySelector('.modal-header__point, .point-score');
+    scoreboard.addEventListener('click', () => window.location.href = "../scoreboard/scoreboard.html");
 </script>
 </body>
 </html>
