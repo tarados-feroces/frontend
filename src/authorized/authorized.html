@@ -68,7 +68,7 @@
                     <div class="modal-header__point">
                         <p class="modal-header__point-value">News</p>
                     </div>
-                    <div class="modal-header__point">
+                    <div class="modal-header__point point-about">
                         <p class="modal-header__point-value">About</p>
                     </div>
                 </div>
@@ -165,8 +165,11 @@
         const settings = document.querySelector('.header__user-info-settings-value');
         settings.addEventListener('click', () => window.location.href = "../settings/settings.html");
 
-        const scoreboard = document.querySelector('.modal-header__point, .point-score');
+        const scoreboard = document.querySelector('.point-score');
         scoreboard.addEventListener('click', () => window.location.href = "../scoreboard/scoreboard.html");
+
+        const about = document.querySelector('.point-about');
+        about.addEventListener('click', () => window.location.href = "../about/about.html");
     </script>
 </body>
 </html>
