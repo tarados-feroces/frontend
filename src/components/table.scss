@@ -2,7 +2,7 @@ $headers-font: 'Nunito', sans-serif;
 $header-background: #0f255d;
 //$header-text-color: #e7bb41;
 
-$main-font: 'Crimson Text', sans-serif;
+$main-font: 'Antic Slab', serif;
 $blocks-background: #143f6b;
 $blocks-text-color: #e5f4e3;
 
@@ -44,6 +44,7 @@ $blocks-text-color: #e5f4e3;
     margin: 0;
     width: 100px;
     user-select: none;
+    font-family: $main-font;
   }
 
   &__header {
@@ -56,5 +57,6 @@ $blocks-text-color: #e5f4e3;
     margin: 0;
     width: 150px;
     user-select: none;
+    font-family: $main-font;
   }
 }
