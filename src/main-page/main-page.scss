@@ -9,8 +9,9 @@ $blocks-text-color: #e5f4e3;
 body {
   overflow-x: hidden;
   margin: 0;
+  cursor: default;
+  user-select: none;
 }
-
 
 .background {
   position: fixed;
