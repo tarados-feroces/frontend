@@ -51,6 +51,7 @@ body {
   &__content {
     display: flex;
     flex-direction: column;
+    //overflow: auto;
     width: 50%;
     align-self: center;
     &-description {
