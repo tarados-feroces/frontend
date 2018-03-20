@@ -51,13 +51,18 @@
                     <img class="header__user-info-settings-value" src="../settings.svg">
                 </div>
             </div>
+            <div class="header__user-info-settings">
+                <div class="header__user-info-settings-value logout">
+                    <img class="header__user-info-settings-value" src="../logout.png">
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="auth-page__content">
         <div class="auth-page__content-modal">
             <div class="auth-page__content-modal-header modal-header">
-                <div class="modal-header__point">
+                <div class="modal-header__point modal-header__point_active">
                     <p class="modal-header__point-value">Scoreboard</p>
                 </div>
                 <div class="modal-header__point">
@@ -201,6 +206,8 @@
     // if (modal.classList)
     });
     });
+    const logout = document.querySelector('.logout');
+    logout.addEventListener('click', () => window.location.href = "../main-page/main-page.html");
 
     const settings = document.querySelector('.header__user-info-settings-value');
     settings.addEventListener('click', () => window.location.href = "../settings/settings.html");

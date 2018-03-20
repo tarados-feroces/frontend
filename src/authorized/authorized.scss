@@ -122,6 +122,9 @@ $blocks-text-color: #e5f4e3;
     border-left: thin solid black;
     border-right: thin solid black;
     border-bottom: thin solid black;
+    &_active {
+      background-color: #5d7dba;
+    }
     &:hover {
       background-color: #1956a8;
     }
@@ -167,8 +170,6 @@ $blocks-text-color: #e5f4e3;
     display: flex;
     color: white;
     font-size: 28px;
-    //width: 200px;
-    //height: 100%;
     align-self: center;
   }
 }

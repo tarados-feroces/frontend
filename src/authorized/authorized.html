@@ -50,6 +50,11 @@
                         <img class="header__user-info-settings-value" src="../settings.svg">
                     </div>
                 </div>
+                <div class="header__user-info-settings">
+                    <div class="header__user-info-settings-value logout">
+                        <img class="header__user-info-settings-value" src="../logout.png">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -154,6 +159,8 @@
             // if (modal.classList)
             });
         });
+        const logout = document.querySelector('.logout');
+        logout.addEventListener('click', () => window.location.href = "../main-page/main-page.html");
 
         const settings = document.querySelector('.header__user-info-settings-value');
         settings.addEventListener('click', () => window.location.href = "../settings/settings.html");
