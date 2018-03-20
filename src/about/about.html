@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <link href="../css/main-page/main-page.css" rel="stylesheet" type="text/css">
+    <link href="../_reset.css" rel="stylesheet" type="text/css">
+    <link href="../css/authorized/authorized.css" rel="stylesheet" type="text/css">
+    <link href="../css/components/button.css" type="text/css" rel="stylesheet">
+    <link href="../css/components/input.css" type="text/css" rel="stylesheet">
+    <link href="../css/components/label.css" type="text/css" rel="stylesheet">
+    <link href="../css/components/header.css" type="text/css" rel="stylesheet">
+    <link href="../css/components/friends-modal.css" type="text/css" rel="stylesheet">
+    <link href="../css/components/table.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="background"></div>
+
+<div class="auth-page">
+    <div class="auth-page__header header">
+        <div class="header-logo">
+            <img class="header-logo-content" src="../Deadlinez.png">
+        </div>
+        <div class="button button-play">
+            <p class="button-play__value">PLAY</p>
+        </div>
+        <div class="header__user-info">
+            <div class="header__user-info-avatar">
+                <img class="header__user-info-avatar" src="../user-logo.jpg">
+            </div>
+            <div class="header__user-info-data-block">
+                <div class="header__user-info-data-block-login">
+                    <p class="header__user-info-data-block-login-value">danchetto</p>
+                </div>
+                <div class="header__user-info-data-block-score">
+                    <img class="header__user-info-data-block-score-image" src="../coins.png">
+                    <div class="header__user-info-data-block-score-number">
+                        <p class="header__user-info-data-block-score-number-value">645$</p>
+                    </div>
+                </div>
+                <div class="header__user-info-data-block-score">
+                    <img class="header__user-info-data-block-score-image" src="../points.png">
+                    <div class="header__user-info-data-block-score-number">
+                        <p class="header__user-info-data-block-score-number-value">8765</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header__user-info-settings">
+                <div class="header__user-info-settings-value">
+                    <img class="header__user-info-settings-value" src="../settings.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-page__content">
+        <div class="auth-page__content-modal">
+            <div class="auth-page__content-modal-header modal-header">
+                <div class="modal-header__point">
+                    <p class="modal-header__point-value">Scoreboard</p>
+                </div>
+                <div class="modal-header__point">
+                    <p class="modal-header__point-value">News</p>
+                </div>
+                <div class="modal-header__point modal-header__point_active">
+                    <p class="modal-header__point-value">About</p>
+                </div>
+            </div>
+
+
+            <div class="auth-page__content-modal-data">
+                <div class="about-block">
+                    <div class="about-block__data text">
+                        <p class="text__data">Contrary to popular belief, Lorem Ipsum is not simply random text.
+                            It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                            Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+                            looked up one of the more obscure Latin words, consectetur.</p>
+                    </div>
+                    <div class="about-block__trailer">
+                        <iframe src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="friends-modal hidden">
+            <div class="friends-modal-points">
+                <p class="friends-modal-points-text">Invite</p>
+            </div>
+            <div class="friends-modal-points">
+                <p class="friends-modal-points-text">Send</p>
+            </div>
+            <div class="friends-modal-points">
+                <p class="friends-modal-points-text">View profile</p>
+            </div>
+        </div>
+
+        <div class="auth-page__content-friends friends">
+            <div class="friends-label">
+                <p class="friends-label-value">Friends</p>
+            </div>
+            <div class="friends-item">
+                <img class="friends-item-avatar" src="../user-logo.jpg">
+                <div class="friends-item-login">
+                    <p class="friends-item-login-value">kabachok160</p>
+                </div>
+                <img class="friends-item-image" src="../menu.png">
+            </div>
+            <div class="friends-item">
+                <img class="friends-item-avatar" src="../user-logo.jpg">
+                <div class="friends-item-login">
+                    <p class="friends-item-login-value">kabachok160</p>
+                </div>
+                <img class="friends-item-image" src="../menu.png">
+            </div>
+            <div class="friends-item">
+                <img class="friends-item-avatar" src="../user-logo.jpg">
+                <div class="friends-item-login">
+                    <p class="friends-item-login-value">kabachok160</p>
+                </div>
+                <img class="friends-item-image" src="../menu.png">
+            </div>
+        </div>
+
+
+    </div>
+    <div class="auth-page__content-party party-lay">
+
+        <div class="online-info">
+            <p class="online-info__content">Online: 500</p>
+            <p class="online-info__content">Now playing: 500</p>
+            <p class="online-info__content">Now searching: 500</p>
+        </div>
+
+        <div class="party">
+            <div class="party-friend">
+                <img class="party-friend-logo" src="../user-logo.jpg">
+            </div>
+            <div class="party-friend">
+                <img class="party-friend-logo" src="../user-logo.jpg">
+            </div>
+            <div class="party-friend">
+                <img class="party-friend-logo" src="../user-logo.jpg">
+            </div>
+            <div class="party-friend">
+                <img class="party-friend-logo" src="../user-logo.jpg">
+            </div>
+            <div class="party-invite">
+                <img class="party-invite-button" src="../add.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const friends = [...document.getElementsByClassName('friends-item-image')];
+    const modal = document.querySelector('.friends-modal');
+    friends.forEach((item) => {
+        item.addEventListener('click', (event) => {
+            const icon = event.currentTarget;
+            // modal.style.backgroundColor = 'black';
+            const x = icon.x - 200;
+            modal.style.left = `${x}px`;
+            modal.style.top = `${icon.y}px`;
+            modal.classList.toggle('hidden');
+            // if (modal.classList)
+        });
+    });
+
+    const settings = document.querySelector('.header__user-info-settings-value');
+    settings.addEventListener('click', () => window.location.href = "../settings/settings.html");
+
+    const scoreboard = document.querySelector('.modal-header__point, .point-score');
+    scoreboard.addEventListener('click', () => window.location.href = "../scoreboard/scoreboard.html");
+</script>
+</body>
+</html>
