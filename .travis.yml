@@ -19,3 +19,4 @@ deploy:
 
 before_script:
   - npm install
+  - npm run sass
