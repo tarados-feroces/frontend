@@ -2,7 +2,7 @@ $headers-font: 'Nunito', sans-serif;
 $header-background: #0f255d;
 $header-text-color: #e7bb41;
 
-$main-font: 'Crimson Text', sans-serif;
+$main-font: 'Nanum Myeongjo', serif;
 $blocks-background: #143f6b;
 $blocks-text-color: #e5f4e3;
 
@@ -143,6 +143,7 @@ body {
     color: white;
     font-size: 24px;
     align-self: center;
+    font-family: $main-font;
   }
 }
 
@@ -151,6 +152,7 @@ body {
   &__text {
     opacity: 1;
     font-size: 60px;
+    font-family: $main-font;
   }
 }
 

@@ -2,7 +2,7 @@ $headers-font: 'Nunito', sans-serif;
 $header-background: #0f255d;
 $header-text-color: #e7bb41;
 
-$main-font: 'Crimson Text', sans-serif;
+$main-font: 'Antic Slab', serif;
 $blocks-background: #143f6b;
 $blocks-text-color: #e5f4e3;
 
@@ -91,6 +91,7 @@ $blocks-text-color: #e5f4e3;
       &-value {
         margin: auto;
         font-size: 30px;
+        font-family: $main-font;
         color: $blocks-text-color;
         user-select: none;
       }
@@ -144,6 +145,7 @@ $blocks-text-color: #e5f4e3;
       font-size: 40px;
       margin: auto;
       color: $blocks-text-color;
+      font-family: $main-font;
     }
   }
 }
@@ -172,6 +174,7 @@ $blocks-text-color: #e5f4e3;
     color: white;
     font-size: 28px;
     align-self: center;
+    font-family: $main-font;
   }
 }
 
