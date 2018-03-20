@@ -147,9 +147,32 @@ $blocks-text-color: #e5f4e3;
 .party-lay {
   width: 100%;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  justify-content: space-around;
   margin-top: 20px;
 }
+
+.online-info {
+  width: 1220px;
+  height: 100px;
+  display: flex;
+  background-color: $blocks-background;
+  box-shadow: 4px 4px 10px 2px #00072d;;
+  border-radius: 25px;
+  border-left: thin solid black;
+  border-right: thin solid black;
+  justify-content: space-around;
+
+  &__content {
+    display: flex;
+    color: white;
+    font-size: 28px;
+    //width: 200px;
+    //height: 100%;
+    align-self: center;
+  }
+}
+
 .party {
   width: 450px;
   height: 100px;
