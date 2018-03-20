@@ -66,6 +66,7 @@ $blocks-text-color: #e5f4e3;
       margin: auto;
       color: $blocks-text-color;
       font-family: $main-font;
+      user-select: none;
     }
   }
   &-item {
@@ -90,6 +91,7 @@ $blocks-text-color: #e5f4e3;
         margin: auto;
         font-size: 30px;
         color: $blocks-text-color;
+        user-select: none;
       }
     }
 
@@ -109,7 +111,6 @@ $blocks-text-color: #e5f4e3;
   border-radius: 25px;
   display: flex;
   justify-content: space-between;
-  //box-shadow: 0 4px 2px -2px #00071e;
   &__point {
     height: 60px;
     flex-grow: 1;
@@ -123,6 +124,9 @@ $blocks-text-color: #e5f4e3;
     border-bottom: thin solid black;
     &:hover {
       background-color: #1956a8;
+    }
+    &:active {
+      background-color: #131b44;
     }
     &:first-child{
       border-top-left-radius: 25px;
@@ -151,6 +155,7 @@ $blocks-text-color: #e5f4e3;
   height: 100px;
   display: flex;
   background-color: $blocks-background;
+  box-shadow: 4px 4px 10px 2px #00072d;;
   border-radius: 25px;
   border-left: thin solid black;
   border-right: thin solid black;
@@ -174,7 +179,6 @@ $blocks-text-color: #e5f4e3;
       user-select: none;
       cursor: pointer;
       margin: auto;
-      //align-self: center;
       width: 64px;
       height: 64px;
     }
@@ -183,7 +187,6 @@ $blocks-text-color: #e5f4e3;
 
 .scoreboard {
   width: 60%;
-  //height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -200,5 +203,3 @@ $blocks-text-color: #e5f4e3;
 
   }
 }
-
-
