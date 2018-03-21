@@ -61,22 +61,25 @@
             </div>
         </div>
 
-
         <div class="auth-page__content">
-            <div class="auth-page__content-modal">
-                <div class="auth-page__content-modal-header modal-header">
-                    <div class="modal-header__point point-score">
-                        <p class="modal-header__point-value">Scoreboard</p>
+            <div class="auth-page__content-left">
+
+                <div class="auth-page__content-left-modal">
+                    <div class="auth-page__content-left-modal-header modal-header">
+                        <div class="modal-header__point point-score">
+                            <p class="modal-header__point-value">Scoreboard</p>
+                        </div>
+                        <div class="modal-header__point">
+                            <p class="modal-header__point-value">News</p>
+                        </div>
+                        <div class="modal-header__point point-about">
+                            <p class="modal-header__point-value">About</p>
+                        </div>
                     </div>
-                    <div class="modal-header__point">
-                        <p class="modal-header__point-value">News</p>
-                    </div>
-                    <div class="modal-header__point point-about">
-                        <p class="modal-header__point-value">About</p>
-                    </div>
+                    <div class="auth-page__content-left-modal-data"></div>
                 </div>
-                <div class="auth-page__content-modal-data"></div>
             </div>
+
             <div class="friends-modal hidden">
                 <div class="friends-modal-points">
                     <p class="friends-modal-points-text">Invite</p>
@@ -89,60 +92,56 @@
                 </div>
             </div>
 
+            <div class="auth-page__content-right">
 
-            <div class="auth-page__content-friends friends">
-                <div class="friends-label">
-                    <p class="friends-label-value">Friends</p>
-                </div>
-                <div class="friends-item">
-                    <img class="friends-item-avatar" src="../user-logo.jpg">
-                    <div class="friends-item-login">
-                        <p class="friends-item-login-value">kabachok160</p>
+                <div class="auth-page__content-right-friends">
+                    <div class="auth-page__content-right-friends-icon">
+                        <img class="auth-page__content-right-friends-icon-value" src="../back.png">
                     </div>
-                    <img class="friends-item-image" src="../menu.png">
-                </div>
-                <div class="friends-item">
-                    <img class="friends-item-avatar" src="../user-logo.jpg">
-                    <div class="friends-item-login">
-                        <p class="friends-item-login-value">kabachok160</p>
+                    <div class="friends">
+                        <div class="friends-label">
+                            <p class="friends-label-value">Friends</p>
+                        </div>
+                        <div class="friends-item">
+                            <img class="friends-item-avatar" src="../user-logo.jpg">
+                            <div class="friends-item-login">
+                                <p class="friends-item-login-value">kabachok160</p>
+                            </div>
+                            <img class="friends-item-image" src="../menu.png">
+                        </div>
+                        <div class="friends-item">
+                            <img class="friends-item-avatar" src="../user-logo.jpg">
+                            <div class="friends-item-login">
+                                <p class="friends-item-login-value">kabachok160</p>
+                            </div>
+                            <img class="friends-item-image" src="../menu.png">
+                        </div>
+                        <div class="friends-item">
+                            <img class="friends-item-avatar" src="../user-logo.jpg">
+                            <div class="friends-item-login">
+                                <p class="friends-item-login-value">kabachok160</p>
+                            </div>
+                            <img class="friends-item-image" src="../menu.png">
+                        </div>
                     </div>
-                    <img class="friends-item-image" src="../menu.png">
                 </div>
-                <div class="friends-item">
-                    <img class="friends-item-avatar" src="../user-logo.jpg">
-                    <div class="friends-item-login">
-                        <p class="friends-item-login-value">kabachok160</p>
+
+                <div class="content-right-party">
+                    <div class="content-right-party-friend">
+                        <img class="content-right-party-friend-logo" src="../user-logo.jpg">
                     </div>
-                    <img class="friends-item-image" src="../menu.png">
-                </div>
-            </div>
-        </div>
-
-
-        <div class="auth-page__content-party party-lay">
-
-            <div class="online-info">
-                <p class="online-info__content">Online: 500</p>
-                <p class="online-info__content">Now playing: 500</p>
-                <p class="online-info__content">Now searching: 500</p>
-            </div>
-
-
-            <div class="party">
-                <div class="party-friend">
-                    <img class="party-friend-logo" src="../user-logo.jpg">
-                </div>
-                <div class="party-friend">
-                    <img class="party-friend-logo" src="../user-logo.jpg">
-                </div>
-                <div class="party-friend">
-                    <img class="party-friend-logo" src="../user-logo.jpg">
-                </div>
-                <div class="party-friend">
-                    <img class="party-friend-logo" src="../user-logo.jpg">
-                </div>
-                <div class="party-invite">
-                    <img class="party-invite-button" src="../add.png">
+                    <div class="content-right-party-friend">
+                        <img class="content-right-party-friend-logo" src="../user-logo.jpg">
+                    </div>
+                    <div class="content-right-party-friend">
+                        <img class="content-right-party-friend-logo" src="../user-logo.jpg">
+                    </div>
+                    <div class="content-right-party-friend">
+                        <img class="content-right-party-friend-logo" src="../user-logo.jpg">
+                    </div>
+                    <div class="content-right-party-invite">
+                        <img class="content-right-party-invite-button" src="../add.png">
+                    </div>
                 </div>
             </div>
         </div>
@@ -173,6 +172,21 @@
 
         const about = document.querySelector('.point-about');
         about.addEventListener('click', () => window.location.href = "../about/about.html");
+
+        const hideFriends = document.querySelector('.auth-page__content-right-friends-icon');
+        const hideValue = document.querySelector('.auth-page__content-right-friends-icon-value');
+        hideFriends.addEventListener('click', () => {document.querySelector('.friends').classList.toggle('hidden');
+        if (hideValue.classList.contains('rotate-close')) {
+            hideValue.classList.add('rotate-open');
+            hideValue.style.transform = 'rotate(180deg)';
+            hideValue.classList.remove('rotate-close');
+        } else {
+            hideValue.classList.add('rotate-close');
+            hideValue.style.transform = 'rotate(0deg)';
+            hideValue.classList.remove('rotate-open');
+        }
+        document.querySelector('.content-right-party').classList.toggle('hidden');
+        })
     </script>
 </body>
 </html>
