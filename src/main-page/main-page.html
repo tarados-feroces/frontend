@@ -42,8 +42,8 @@
 
             <div class="main-page__menu">
 
-                <div class="main-page__menu-point">
-                    <p class="main-page__menu-point-text try">Try it!</p>
+                <div class="main-page__menu-point try">
+                    <p class="main-page__menu-point-text">Try it!</p>
                 </div>
                 <div class="main-page__menu-point signin">
                     <p class="main-page__menu-point-text">Sign In</p>
@@ -58,6 +58,8 @@
     <script>
         'use strict';
 
+        const tryit = document.querySelector(".try", ".main-page__menu-point");
+        tryit.addEventListener('click', () => window.location.href = "../game/game.html");
         const signup = document.querySelector(".signup", ".main-page__menu-point");
         signup.addEventListener('click', () => window.location.href = "../signup/signup.html");
         const signin = document.querySelector(".signin", ".main-page__menu-point");

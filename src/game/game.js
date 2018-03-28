@@ -7,7 +7,7 @@ class Circle {
         this.radius = radius;
         this.color = color;
         this.ctx = ctx;
-        this.speed = 1;
+        this.speed = 3;
     }
 
     draw() {
@@ -47,7 +47,7 @@ class Arena {
         this.fieldX = 150;
         this.fieldY = 100;
         this.fieldWidth = this.width - 300;
-        this.fieldHeight = this.width - 200;
+        this.fieldHeight = this.height - 200;
 
     }
 
@@ -91,6 +91,7 @@ onkeydown = onkeyup = function(e){
 
 
 const movementControl = (player) => {
+
     let x = 0;
     let y = 0;
     if (keyMap[68]) {
@@ -106,7 +107,14 @@ const movementControl = (player) => {
         y -= player.speed;
     }
 
+    if (!checkBorderCollision(player.x + x, player.y + y, player.radius)) {
+        player.move(-x, -y);
+        checkBotCollision(player);
+        return;
+    }
+
     player.move(x, y);
+    checkBotCollision(player);
 };
 
 window.addEventListener('keypress', (event) => {
@@ -119,28 +127,33 @@ window.addEventListener('keyup', (event) => {
     // movementControl(event, player);
 });
 
-setInterval(() => {
+const gameLoop = setInterval(() => {
     movementControl(player);
-}, 1000/224);
+}, 1000/74);
 
 
-const checkBorderCollision = (player) => {
-    if (player.x - player.radius <= arena.fieldX || player.x + player.radius >= arena.fieldX + arena.fieldWidth) {
-        console.log('Out of border X');
+const checkBorderCollision = (x, y, radius) => {
+    if (x - radius <= arena.fieldX || x + radius >= arena.fieldX + arena.fieldWidth) {
+        return false;
     }
-    if (player.y - player.radius <= arena.fieldY || player.y + player.radius >= arena.fieldY + arena.fieldHeight) {
-        console.log('Out of border Y');
+    if (y - radius <= arena.fieldY || y + radius >= arena.fieldY + arena.fieldHeight) {
+        return false;
     }
+    return true;
 };
 
 const checkBotCollision = (player) => {
     bots.forEach((item) => {
-        if (Math.abs(item.x - player.x) <= (item.radius + player.radius) &&
-            Math.abs(item.y - player.y) <= (item.radius + player.radius)) {
-            console.log('COLLISION!');
+        const dx = item.x - player.x;
+        const dy = item.y - player.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if ( dist < (item.radius + player.radius) ) {
+            clearInterval(gameLoop);
+            alert("You died!");
+            window.location.href = "../main-page/main-page.html";
         }
     })
 };
 
-bots[0].move(-10, 0);
-checkBotCollision(player);
+// bots[0].move(-10, 0);
+
