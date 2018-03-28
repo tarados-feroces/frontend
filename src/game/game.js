@@ -38,12 +38,17 @@ class Circle {
     }
 }
 
+
 class Arena {
     constructor() {
         this.x = 0;
         this.y = 0;
         this.width = window.innerWidth;
         this.height = window.innerHeight;
+        this.fieldX = 150;
+        this.fieldY = 100;
+        this.fieldWidth = this.width - 300;
+        this.fieldHeight = this.width - 200;
 
     }
 
@@ -52,7 +57,7 @@ class Arena {
         ctx.fillStyle = 'brown';
         ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.fillStyle = 'green';
-        ctx.fillRect(this.x + 150, this.y + 100, this.width - 300, this.height - 200);
+        ctx.fillRect(this.fieldX, this.fieldY, this.fieldWidth, this.fieldHeight);
         ctx.closePath();
     }
 }
@@ -68,6 +73,32 @@ arena.draw(ctx);
 
 const player = new Circle(250, 200, 20, 'red', ctx);
 player.draw(ctx);
-player.move(100, 100);
+// player.move(100, 100);
+
+const bots = [];
+const bot = new Circle(300, 200, 20, 'black', ctx);
+bots.push(bot);
+bot.draw();
 
 // window.addEventListener('resize', () => {canvas.width = window.innerWidth; canvas.height = window.innerHeight;});
+
+const checkBorderCollision = (player) => {
+    if (player.x - player.radius <= arena.fieldX || player.x + player.radius >= arena.fieldX + arena.fieldWidth) {
+        console.log('Out of border X');
+    }
+    if (player.y - player.radius <= arena.fieldY || player.y + player.radius >= arena.fieldY + arena.fieldHeight) {
+        console.log('Out of border Y');
+    }
+};
+
+const checkBotCollision = (player) => {
+    bots.forEach((item) => {
+        if (Math.abs(item.x - player.x) <= (item.radius + player.radius) &&
+            Math.abs(item.y - player.y) <= (item.radius + player.radius)) {
+            console.log('COLLISION!');
+        }
+    })
+};
+
+bots[0].move(-10, 0);
+checkBotCollision(player);
