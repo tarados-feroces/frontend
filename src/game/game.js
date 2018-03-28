@@ -7,7 +7,7 @@ class Circle {
         this.radius = radius;
         this.color = color;
         this.ctx = ctx;
-        this.speed = 3;
+        this.speed = 1;
     }
 
     draw() {
@@ -17,7 +17,6 @@ class Circle {
         this.ctx.fill();
         this.ctx.closePath();
     }
-
 
     move(dx, dy) {
         this.clear();
@@ -73,6 +72,7 @@ arena.draw(ctx);
 
 const player = new Circle(250, 200, 20, 'red', ctx);
 player.draw(ctx);
+
 // player.move(100, 100);
 
 const bots = [];
@@ -81,6 +81,48 @@ bots.push(bot);
 bot.draw();
 
 // window.addEventListener('resize', () => {canvas.width = window.innerWidth; canvas.height = window.innerHeight;});
+
+const keyMap = {}; // You could also use an array
+
+onkeydown = onkeyup = function(e){
+    keyMap[e.keyCode] = (e.type === 'keypress' || e.type === 'keydown');
+};
+
+
+
+const movementControl = (player) => {
+    let x = 0;
+    let y = 0;
+    if (keyMap[68]) {
+        x += player.speed;
+    }
+    if (keyMap[65]) {
+        x -= player.speed;
+    }
+    if (keyMap[83]) {
+        y += player.speed;
+    }
+    if (keyMap[87]) {
+        y -= player.speed;
+    }
+
+    player.move(x, y);
+};
+
+window.addEventListener('keypress', (event) => {
+    onkeydown(event);
+    // movementControl(event, player);
+});
+
+window.addEventListener('keyup', (event) => {
+    onkeyup(event);
+    // movementControl(event, player);
+});
+
+setInterval(() => {
+    movementControl(player);
+}, 1000/224);
+
 
 const checkBorderCollision = (player) => {
     if (player.x - player.radius <= arena.fieldX || player.x + player.radius >= arena.fieldX + arena.fieldWidth) {
