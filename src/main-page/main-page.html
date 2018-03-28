@@ -54,6 +54,7 @@
                             dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                             </p>
                     </div>
+
                 </div>
             </div>
 
@@ -69,6 +70,8 @@
     <script>
         'use strict';
 
+        const tryit = document.querySelector(".try", ".main-page__menu-point");
+        tryit.addEventListener('click', () => window.location.href = "../game/game.html");
         const signup = document.querySelector(".signup", ".main-page__menu-point");
         signup.addEventListener('click', () => window.location.href = "../signup/signup.html");
         const signin = document.querySelector(".signin", ".main-page__menu-point");
