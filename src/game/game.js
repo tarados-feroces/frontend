@@ -7,7 +7,7 @@ class Circle {
         this.radius = radius;
         this.color = color;
         this.ctx = ctx;
-        this.speed = 3;
+        this.speed = 1;
     }
 
     draw() {
@@ -68,91 +68,46 @@ arena.draw(ctx);
 const player = new Circle(250, 200, 20, 'red', ctx);
 player.draw(ctx);
 
-const map = {}; // You could also use an array
+const keyMap = {}; // You could also use an array
+
 onkeydown = onkeyup = function(e){
-    e = e || event; // to deal with IE
-    map[e.keyCode] = e.type == 'keydown';
-    /* insert conditional here */
-}
-
-
-
-const movementControl = (event, player) => {
-    switch (event.keyCode) {
-        case 68:
-            switch (lastKey[0]) {
-                case 87:
-                    player.move(player.speed, -player.speed);
-                    player.move(player.speed, -player.speed);
-                    break;
-                case 83:
-                    player.move(player.speed, player.speed);
-                    player.move(player.speed, player.speed);
-                    break;
-                default:
-                    player.move(player.speed, 0);
-                    player.move(player.speed, 0);
-                    break;
-            }
-            updateKey(lastKey, 68);
-            break;
-
-        case 65:
-            switch (lastKey[0]) {
-                case 87:
-                    player.move(-player.speed, -player.speed);
-                    player.move(-player.speed, -player.speed);
-                    break;
-                case 83:
-                    player.move(-player.speed, player.speed);
-                    player.move(-player.speed, player.speed);
-                    break;
-                default:
-                    player.move(-player.speed, 0);
-                    player.move(-player.speed, 0);
-                    break;
-            }
-            updateKey(lastKey, 65);
-            break;
-        case 87:
-            switch (lastKey[0]) {
-                case 68:
-                    player.move(player.speed, -player.speed);
-                    player.move(player.speed, -player.speed);
-                    break;
-                case 65:
-                    player.move(-player.speed, -player.speed);
-                    player.move(-player.speed, -player.speed);
-                    break;
-                default:
-                    player.move(0, -player.speed);
-                    player.move(0, -player.speed);
-                    break;
-            }
-            updateKey(lastKey, 87);
-            break;
-        case 83:
-            switch (lastKey[0]) {
-                case 68:
-                    player.move(player.speed, player.speed);
-                    player.move(player.speed, player.speed);
-                    break;
-                case 65:
-                    player.move(-player.speed, player.speed);
-                    player.move(-player.speed, player.speed);
-                    break;
-                default:
-                    player.move(0, player.speed);
-                    player.move(0, player.speed);
-                    break;
-            }
-            updateKey(lastKey, 83);
-            break;
-    }
+    keyMap[e.keyCode] = (e.type === 'keypress' || e.type === 'keydown');
 };
 
-window.addEventListener('keydown', onkeydown);
-window.addEventListener('keyup', () =>  updateKey(lastKey, null));
+
+
+const movementControl = (player) => {
+    let x = 0;
+    let y = 0;
+    if (keyMap[68]) {
+        x += player.speed;
+    }
+    if (keyMap[65]) {
+        x -= player.speed;
+    }
+    if (keyMap[83]) {
+        y += player.speed;
+    }
+    if (keyMap[87]) {
+        y -= player.speed;
+    }
+
+    player.move(x, y);
+};
+
+window.addEventListener('keypress', (event) => {
+    onkeydown(event);
+    // movementControl(event, player);
+});
+
+window.addEventListener('keyup', (event) => {
+    onkeyup(event);
+    // movementControl(event, player);
+});
+
+setInterval(() => {
+    movementControl(player);
+}, 1000/224);
 
 
 
