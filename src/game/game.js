@@ -30,13 +30,11 @@ class Circle {
     clear() {
         this.ctx.beginPath();
         this.ctx.arc(this.x, this.y, this.radius + 1, 0, 360, false);
-        this.ctx.fillStyle = 'green';
+        this.ctx.fillStyle = '#1956a8';
         this.ctx.fill();
         this.ctx.closePath();
-
     }
 }
-
 
 class Arena {
     constructor() {
@@ -53,11 +51,45 @@ class Arena {
 
     draw(ctx = ctx) {
         ctx.beginPath();
-        ctx.fillStyle = 'brown';
+        ctx.fillStyle = '#1956a8';
         ctx.fillRect(this.x, this.y, this.width, this.height);
-        ctx.fillStyle = 'green';
+        ctx.fillStyle = '#1956a8';
         ctx.fillRect(this.fieldX, this.fieldY, this.fieldWidth, this.fieldHeight);
         ctx.closePath();
+    }
+}
+
+class Round {
+    constructor() {
+        this.bots = [];
+        this.wave = 1;
+    }
+
+    firstWave() {
+        const bot = new Circle(0, 100, 20, 'black', ctx);
+        this.bots.push(bot);
+        bot.draw();
+        const bot1 = new Circle(0, 200, 20, 'black', ctx);
+        this.bots.push(bot1);
+        bot1.draw();
+        const bot2 = new Circle(0, 300, 20, 'black', ctx);
+        this.bots.push(bot2);
+        bot2.draw();
+        const bot3 = new Circle(0, 400, 20, 'black', ctx);
+        this.bots.push(bot3);
+        bot3.draw();
+        const bot4 = new Circle(0, 500, 20, 'black', ctx);
+        this.bots.push(bot4);
+        bot4.draw();
+    }
+
+    initWave() {
+        switch (this.wave) {
+            case 1:
+                this.firstWave();
+                break;
+        }
+        this.wave += 1;
     }
 }
 
@@ -70,25 +102,14 @@ const ctx = canvas.getContext('2d');
 const arena = new Arena();
 arena.draw(ctx);
 
-const player = new Circle(250, 200, 20, 'red', ctx);
+const player = new Circle(arena.fieldX + arena.fieldWidth / 2, arena.fieldY + arena.fieldHeight / 2, 20, 'red', ctx);
 player.draw(ctx);
 
-// player.move(100, 100);
-
-const bots = [];
-const bot = new Circle(300, 200, 20, 'black', ctx);
-bots.push(bot);
-bot.draw();
-
-// window.addEventListener('resize', () => {canvas.width = window.innerWidth; canvas.height = window.innerHeight;});
-
-const keyMap = {}; // You could also use an array
+const keyMap = {};
 
 onkeydown = onkeyup = function(e){
     keyMap[e.keyCode] = (e.type === 'keypress' || e.type === 'keydown');
 };
-
-
 
 const movementControl = (player) => {
 
@@ -127,8 +148,15 @@ window.addEventListener('keyup', (event) => {
     // movementControl(event, player);
 });
 
+const round = new Round();
+round.initWave();
+
 const gameLoop = setInterval(() => {
     movementControl(player);
+}, 1000/74);
+
+const gameLoop1 = setInterval(() => {
+    round.bots.forEach((bot) => bot.move(4, 0))
 }, 1000/74);
 
 
@@ -143,7 +171,7 @@ const checkBorderCollision = (x, y, radius) => {
 };
 
 const checkBotCollision = (player) => {
-    bots.forEach((item) => {
+    round.bots.forEach((item) => {
         const dx = item.x - player.x;
         const dy = item.y - player.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
