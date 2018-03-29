@@ -1,6 +1,5 @@
 'use strict';
 
-
 const canvas = document.getElementById('canvas');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -17,6 +16,7 @@ class Object {
     }
 
     draw() {
+        // this.ctx.globalCompositeOperation = 'source-over';
         this.ctx.beginPath();
         this.ctx.arc(this.x, this.y, this.radius, 0, 360, false);
         this.ctx.fillStyle = this.color;
@@ -34,11 +34,11 @@ class Object {
     }
 
     clear() {
-        this.ctx.beginPath();
-        this.ctx.arc(this.x, this.y, this.radius + 1, 0, 360, false);
-        this.ctx.fillStyle = '#1956a8';
-        this.ctx.fill();
-        this.ctx.closePath();
+        // this.ctx.globalCompositeOperation = 'destination-out';
+        // this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, true);
+        // this.ctx.fill();
+
+        this.ctx.clearRect(this.x - this.radius, this.y - this.radius, this.radius * 2 + 2, this.radius * 2 + 2);
     }
 }
 
@@ -67,13 +67,29 @@ class Bot extends Object {
     movement() {
         this.move(this.speedDirections[this.direction][0], this.speedDirections[this.direction][1]);
     }
+
+    // clear() {
+    //     this.ctx.beginPath();
+    //     this.ctx.arc(this.x, this.y, this.radius + 1, 0, 360, false);
+    //     if (checkBotInField(this)) {
+    //         this.ctx.fillStyle = '#1956a8';
+    //         this.ctx.fill();
+    //     }
+    //     else {
+    //         this.ctx.clearRect(this.x - this.radius, this.y - this.radius, this.radius * 2, this.radius * 2);
+    //         // this.ctx.fillStyle = '#000a57';
+    //     }
+    //
+    //     this.ctx.closePath();
+    // }
 }
 class Arena {
     constructor(ctx) {
         this.x = 0;
         this.y = 0;
-        this.width = window.innerWidth;
-        this.height = window.innerHeight;
+        // this.width = window.innerWidth;
+        this.width = 1855;
+        this.height = 990;
         this.fieldX = 400;
         this.fieldY = 200;
         this.fieldWidth = this.width - 800;
@@ -83,12 +99,12 @@ class Arena {
     }
 
     draw(ctx = this.ctx) {
-        ctx.beginPath();
-        ctx.fillStyle = '#000a57';
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-        ctx.fillStyle = '#1956a8';
-        ctx.fillRect(this.fieldX, this.fieldY, this.fieldWidth, this.fieldHeight);
-        ctx.closePath();
+        // // ctx.beginPath();
+        // ctx.fillStyle = 'transparent';
+        // ctx.fillRect(this.x, this.y, this.width, this.height);
+        // // ctx.fillStyle = '#1956a8';
+        // ctx.fillRect(this.fieldX, this.fieldY, this.fieldWidth, this.fieldHeight);
+        // // ctx.closePath();
     }
 }
 
@@ -102,7 +118,7 @@ class Round {
     checkBots() {
         let counter = 0;
         this.bots.forEach((bot) => {
-            if (!checkBorderCollision(bot.x, bot.y, bot.radius + 2)) {
+            if (!checkBotAlive(bot)) {
                 counter += 1;
                 bot.clear();
                 bot.isActive = false;
@@ -121,128 +137,128 @@ class Round {
     }
 
     firstWave() {
-        let bot = new Bot(ctx, this.arena.fieldX + 50, this.arena.fieldY + 400, 'right', 500);
+        let bot = new Bot(ctx, 50, 400, 'right', 500);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 50, this.arena.fieldY + 500, 'right', 33);
+        bot = new Bot(ctx, 50, 500, 'right', 33);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 400, this.arena.fieldY + 50, 'down');
+        bot = new Bot(ctx, 400, 50, 'down');
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + this.arena.fieldWidth - 100, this.arena.fieldY + 400, 'left', 800);
+        bot = new Bot(ctx, this.arena.width - 100, 400, 'left', 800);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 500, this.arena.fieldY + this.arena.fieldHeight - 100, 'up', 100);
+        bot = new Bot(ctx, 500, this.arena.height - 100, 'up', 100);
         this.createBot(bot);
     }
 
     secondWave() {
-        let bot = new Bot(ctx, this.arena.fieldX + 50, this.arena.fieldY + 400, 'right', 500);
+        let bot = new Bot(ctx, 50, 400, 'right', 500);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 50, this.arena.fieldY + 200, 'right', 33);
+        bot = new Bot(ctx,  50, 200, 'right', 33);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 400, this.arena.fieldY + 50, 'down');
+        bot = new Bot(ctx,  400, 50, 'down');
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + this.arena.fieldWidth - 100, this.arena.fieldY + 400, 'left', 800);
+        bot = new Bot(ctx,  this.arena.width - 100,  400, 'left', 800);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 500, this.arena.fieldY + this.arena.fieldHeight - 100, 'up', 100);
+        bot = new Bot(ctx,  500,  this.arena.height - 100, 'up', 100);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 50, this.arena.fieldY + 500, 'right', 1000);
+        bot = new Bot(ctx,  50, 500, 'right', 1000);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + this.arena.fieldWidth - 100, this.arena.fieldY + 500, 'left', 303);
+        bot = new Bot(ctx,  this.arena.width - 100, 500, 'left', 303);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 400, this.arena.fieldY + 150, 'down', 460);
+        bot = new Bot(ctx,  400,  150, 'down', 460);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + this.arena.fieldWidth - 100, this.arena.fieldY + 100, 'left', 300);
+        bot = new Bot(ctx, this.arena.width - 100,  100, 'left', 300);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 500, this.arena.fieldY + this.arena.fieldHeight - 100, 'up', 150);
+        bot = new Bot(ctx, 500,  this.arena.height - 100, 'up', 150);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 300, this.arena.fieldY + this.arena.fieldHeight - 100, 'up', 200);
+        bot = new Bot(ctx, 300, this.arena.height - 100, 'up', 200);
         this.createBot(bot);
 
     }
 
     thirdWave() {
-        let bot = new Bot(ctx, this.arena.fieldX + 50, this.arena.fieldY + 100, 'right', 100);
+        let bot = new Bot(ctx,  50, this.arena.fieldY + 100, 'right', 100);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 50, this.arena.fieldY + 400, 'right', 250);
+        bot = new Bot(ctx,  50, this.arena.fieldY + 400, 'right', 250);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 200, this.arena.fieldY + 50, 'down', 421);
+        bot = new Bot(ctx,  200, this.arena.fieldY + 50, 'down', 421);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + this.arena.fieldWidth - 100, this.arena.fieldY + 200, 'left', 330);
+        bot = new Bot(ctx,  this.arena.width - 100, 200, 'left', 330);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 700, this.arena.fieldY + this.arena.fieldHeight - 100, 'up');
+        bot = new Bot(ctx, 700, this.arena.height - 100, 'up');
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 50, this.arena.fieldY + 500, 'right', 579);
+        bot = new Bot(ctx, 50, this.arena.fieldY + 500, 'right', 579);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + this.arena.fieldWidth - 100, this.arena.fieldY + 70, 'left', 33);
+        bot = new Bot(ctx, this.arena.width - 100,  70, 'left', 33);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 400, this.arena.fieldY + 150, 'down', 134);
+        bot = new Bot(ctx, this.arena.fieldX + 400,150, 'down', 134);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + this.arena.fieldWidth - 100, this.arena.fieldY + 350, 'left', 100);
+        bot = new Bot(ctx, this.arena.width - 100, 350, 'left', 100);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 100, this.arena.fieldY + this.arena.fieldHeight - 100, 'up', 150);
+        bot = new Bot(ctx, 100,  this.arena.height - 100, 'up', 150);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 350, this.arena.fieldY + this.arena.fieldHeight - 100, 'up', 400);
+        bot = new Bot(ctx, 350, this.arena.height - 100, 'up', 400);
         this.createBot(bot);
     }
 
     fourthWave() {
-        let bot = new Bot(ctx, this.arena.fieldX + 50, this.arena.fieldY + 100, 'right', 100);
+        let bot = new Bot(ctx, 50,  100, 'right', 100);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 100, this.arena.fieldY + 50, 'down');
+        bot = new Bot(ctx,  100,  50, 'down');
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + this.arena.fieldWidth - 100, this.arena.fieldY + 200, 'left', 280);
+        bot = new Bot(ctx, this.arena.width - 100,  200, 'left', 280);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 300, this.arena.fieldY + this.arena.fieldHeight - 100, 'up');
+        bot = new Bot(ctx, 300, this.arena.height - 100, 'up');
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 50, this.arena.fieldY + 200, 'right', 341);
+        bot = new Bot(ctx, 50, 200, 'right', 341);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 50, this.arena.fieldY + 400, 'right', 500);
+        bot = new Bot(ctx, 50, 400, 'right', 500);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + this.arena.fieldWidth - 100, this.arena.fieldY + 567, 'left', 290);
+        bot = new Bot(ctx, this.arena.width - 100,  567, 'left', 290);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 400, this.arena.fieldY + 150, 'down', 134);
+        bot = new Bot(ctx, 400,  150, 'down', 134);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 400, this.arena.fieldY + 350, 'down', 400);
+        bot = new Bot(ctx, 400,  350, 'down', 400);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + this.arena.fieldWidth - 100, this.arena.fieldY + 450, 'left', 100);
+        bot = new Bot(ctx, this.arena.width - 100,  450, 'left', 100);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 100, this.arena.fieldY + this.arena.fieldHeight - 100, 'up', 450);
+        bot = new Bot(ctx, 100, this.arena.height - 100, 'up', 450);
         this.createBot(bot);
 
-        bot = new Bot(ctx, this.arena.fieldX + 350, this.arena.fieldY + this.arena.fieldHeight - 100, 'up', 100);
+        bot = new Bot(ctx, 350, this.arena.height - 100, 'up', 100);
         this.createBot(bot);
     }
 
@@ -322,7 +338,25 @@ window.addEventListener('keyup', (event) => {
 const round = new Round(arena);
 
 
+const checkBotAlive = (bot) => {
+    if (bot.x + bot.radius <= arena.x || bot.x - bot.radius >= arena.x + arena.width) {
+        return false;
+    }
+    if (bot.y + bot.radius <= arena.y || bot.y - bot.radius >= arena.y + arena.height) {
+        return false;
+    }
+    return true;
+};
 
+// const checkBotInField = (bot) => {
+//     if (bot.x + bot.radius <= arena.fieldX || bot.x - bot.radius >= arena.fieldX + arena.fieldWidth) {
+//         return false;
+//     }
+//     if (bot.y + bot.radius <= arena.fieldY || bot.y - bot.radius >= arena.fieldY + arena.fieldHeight) {
+//         return false;
+//     }
+//     return true;
+// };
 
 const checkBorderCollision = (x, y, radius) => {
     if (x - radius <= arena.fieldX || x + radius >= arena.fieldX + arena.fieldWidth) {
