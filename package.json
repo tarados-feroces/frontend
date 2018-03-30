@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo 'hello'",
     "sassw": "node-sass --watch src -o src/css",
-    "sass": "node-sass src -o src/css"
+    "sass": "rm -rf src/css && node-sass src -o src/css"
   },
   "repository": {
     "type": "git",
