@@ -16,8 +16,9 @@ class Object {
     }
 
     draw() {
-        // this.ctx.globalCompositeOperation = 'source-over';
+
         this.ctx.beginPath();
+        this.ctx.globalCompositeOperation = 'source-over';
         this.ctx.arc(this.x, this.y, this.radius, 0, 360, false);
         this.ctx.fillStyle = this.color;
         this.ctx.fill();
@@ -34,23 +35,24 @@ class Object {
     }
 
     clear() {
-        // this.ctx.globalCompositeOperation = 'destination-out';
-        // this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, true);
-        // this.ctx.fill();
-
-        this.ctx.clearRect(this.x - this.radius, this.y - this.radius, this.radius * 2 + 2, this.radius * 2 + 2);
+        this.ctx.beginPath();
+        this.ctx.globalCompositeOperation = 'destination-out';
+        this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, true);
+        this.ctx.fill();
+        this.ctx.closePath();
+        // this.ctx.clearRect(this.x - this.radius, this.y - this.radius, this.radius * 2 + 2, this.radius * 2 + 2);
     }
 }
 
 class Player extends Object {
-    constructor(ctx, x, y, speed = 3, radius = 20, color = 'red') {
+    constructor(ctx, x, y, speed = 5, radius = 20, color = 'red') {
         super(ctx, x, y, radius, color);
         this.speed = speed;
     }
 }
 
 class Bot extends Object {
-    constructor(ctx, x, y, direction, timeout = 0, speed = 4, radius = 30, color = 'black') {
+    constructor(ctx, x, y, direction, timeout = 0, speed = 5, radius = 30, color = 'black') {
         super(ctx, x, y, radius, color);
         this.direction = direction;
         this.speed = speed;
@@ -87,9 +89,8 @@ class Arena {
     constructor(ctx) {
         this.x = 0;
         this.y = 0;
-        // this.width = window.innerWidth;
-        this.width = 1855;
-        this.height = 990;
+        this.width = window.innerWidth;
+        this.height = window.innerHeight;
         this.fieldX = 400;
         this.fieldY = 200;
         this.fieldWidth = this.width - 800;
@@ -99,12 +100,16 @@ class Arena {
     }
 
     draw(ctx = this.ctx) {
-        // // ctx.beginPath();
-        // ctx.fillStyle = 'transparent';
-        // ctx.fillRect(this.x, this.y, this.width, this.height);
-        // // ctx.fillStyle = '#1956a8';
-        // ctx.fillRect(this.fieldX, this.fieldY, this.fieldWidth, this.fieldHeight);
-        // // ctx.closePath();
+        ctx.beginPath();
+        ctx.fillStyle = '#000a57';
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.fillStyle = '#1956a8';
+        ctx.fillRect(this.fieldX, this.fieldY, this.fieldWidth, this.fieldHeight);
+        ctx.closePath();
+    }
+
+    clear() {
+        this.ctx.clearRect(this.x, this.y, this.width, this.height);
     }
 }
 
@@ -287,7 +292,7 @@ class Round {
 
 
 const arena = new Arena(ctx);
-arena.draw(ctx);
+arena.draw();
 
 const player = new Player(ctx, arena.fieldX + arena.fieldWidth / 2, arena.fieldY + arena.fieldHeight / 2);
 player.draw(ctx);
@@ -382,11 +387,12 @@ const checkBotCollision = (player) => {
     return result;
 };
 
-setTimeout(() => {
-    document.getElementById('header').style.display = 'none';
-    const gameLoop = setInterval(() => {
+const gameLoop = () => {
+    let animation = requestAnimationFrame(gameLoop);
+    arena.clear();
+        arena.draw();
         if (!movementControl(player)) {
-            clearInterval(gameLoop);
+            cancelAnimationFrame(animation);
             let anotherGame = confirm('You died!!! Do you want to play again?');
             anotherGame ? window.location.reload() : window.location.href = '../main-page/main-page.html';
         }
@@ -400,10 +406,14 @@ setTimeout(() => {
         round.checkBots();
         if (round.bots.length === 0) {
             if (!round.initWave()) {
+                cancelAnimationFrame(animation);
                 let anotherGame = confirm('You won!!! Do you want to play again?');
-                clearInterval(gameLoop);
                 anotherGame ? window.location.reload() : window.location.href = '../main-page/main-page.html';
             }
         }
-    }, 1000/74);
+};
+
+setTimeout(() => {
+    document.getElementById('header').style.display = 'none';
+    requestAnimationFrame(gameLoop);
 }, 1000);
